@@ -35,15 +35,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.getDateForm = new System.Windows.Forms.Button();
+            this.inbox = new System.Windows.Forms.Button();
             this.THolderofTopBottonMenu = new System.Windows.Forms.TableLayoutPanel();
             this.dataLable = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.getDateForm = new System.Windows.Forms.Button();
             this.TholderOfImageAndTopBottonMenu = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.THolderOfMainTables = new System.Windows.Forms.TableLayoutPanel();
             this.THolderOFLeftButtons = new System.Windows.Forms.TableLayoutPanel();
             this.addfileBotton = new System.Windows.Forms.Button();
@@ -57,65 +55,28 @@
             this.ابزارهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.عملیاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.newMessage = new System.Windows.Forms.Label();
             this.THolderofTopBottonMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.TholderOfImageAndTopBottonMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.THolderOfMainTables.SuspendLayout();
             this.THolderOFLeftButtons.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button6
+            // inbox
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button6.Location = new System.Drawing.Point(769, 3);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 67);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button7.Location = new System.Drawing.Point(679, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(84, 67);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button8.Location = new System.Drawing.Point(592, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(81, 67);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.Location = new System.Drawing.Point(506, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 67);
-            this.button9.TabIndex = 3;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // getDateForm
-            // 
-            this.getDateForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("getDateForm.BackgroundImage")));
-            this.getDateForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.getDateForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.getDateForm.Location = new System.Drawing.Point(412, 3);
-            this.getDateForm.Name = "getDateForm";
-            this.getDateForm.Size = new System.Drawing.Size(88, 67);
-            this.getDateForm.TabIndex = 4;
-            this.getDateForm.UseVisualStyleBackColor = true;
-            this.getDateForm.Click += new System.EventHandler(this.getDateForm_Click);
+            this.inbox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inbox.BackgroundImage")));
+            this.inbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.inbox.Location = new System.Drawing.Point(0, 0);
+            this.inbox.Name = "inbox";
+            this.inbox.Size = new System.Drawing.Size(80, 67);
+            this.inbox.TabIndex = 3;
+            this.inbox.UseVisualStyleBackColor = true;
+            this.inbox.Click += new System.EventHandler(this.inbox_Click);
             // 
             // THolderofTopBottonMenu
             // 
@@ -127,19 +88,16 @@
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.15024F));
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.55869F));
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.44601F));
-            this.THolderofTopBottonMenu.Controls.Add(this.button6, 0, 0);
-            this.THolderofTopBottonMenu.Controls.Add(this.button7, 1, 0);
-            this.THolderofTopBottonMenu.Controls.Add(this.button8, 2, 0);
-            this.THolderofTopBottonMenu.Controls.Add(this.button9, 3, 0);
-            this.THolderofTopBottonMenu.Controls.Add(this.getDateForm, 4, 0);
             this.THolderofTopBottonMenu.Controls.Add(this.dataLable, 5, 0);
             this.THolderofTopBottonMenu.Controls.Add(this.pictureBox1, 6, 0);
+            this.THolderofTopBottonMenu.Controls.Add(this.getDateForm, 1, 0);
+            this.THolderofTopBottonMenu.Controls.Add(this.panel1, 0, 0);
             this.THolderofTopBottonMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.THolderofTopBottonMenu.Location = new System.Drawing.Point(3, 3);
             this.THolderofTopBottonMenu.Name = "THolderofTopBottonMenu";
             this.THolderofTopBottonMenu.RowCount = 1;
             this.THolderofTopBottonMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.THolderofTopBottonMenu.Size = new System.Drawing.Size(852, 73);
+            this.THolderofTopBottonMenu.Size = new System.Drawing.Size(852, 84);
             this.THolderofTopBottonMenu.TabIndex = 0;
             // 
             // dataLable
@@ -148,7 +106,7 @@
             this.dataLable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataLable.Location = new System.Drawing.Point(306, 0);
             this.dataLable.Name = "dataLable";
-            this.dataLable.Size = new System.Drawing.Size(100, 73);
+            this.dataLable.Size = new System.Drawing.Size(100, 84);
             this.dataLable.TabIndex = 5;
             this.dataLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -158,24 +116,47 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 67);
+            this.pictureBox1.Size = new System.Drawing.Size(93, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            // 
+            // getDateForm
+            // 
+            this.getDateForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("getDateForm.BackgroundImage")));
+            this.getDateForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.getDateForm.Location = new System.Drawing.Point(679, 3);
+            this.getDateForm.Name = "getDateForm";
+            this.getDateForm.Size = new System.Drawing.Size(84, 67);
+            this.getDateForm.TabIndex = 4;
+            this.getDateForm.UseVisualStyleBackColor = true;
+            this.getDateForm.Click += new System.EventHandler(this.getDateForm_Click);
             // 
             // TholderOfImageAndTopBottonMenu
             // 
             this.TholderOfImageAndTopBottonMenu.ColumnCount = 1;
             this.TholderOfImageAndTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TholderOfImageAndTopBottonMenu.Controls.Add(this.THolderofTopBottonMenu, 0, 0);
+            this.TholderOfImageAndTopBottonMenu.Controls.Add(this.pictureBox2, 0, 1);
             this.TholderOfImageAndTopBottonMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TholderOfImageAndTopBottonMenu.Location = new System.Drawing.Point(3, 3);
             this.TholderOfImageAndTopBottonMenu.Name = "TholderOfImageAndTopBottonMenu";
             this.TholderOfImageAndTopBottonMenu.RowCount = 2;
             this.TholderOfImageAndTopBottonMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39004F));
             this.TholderOfImageAndTopBottonMenu.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.60995F));
-            this.TholderOfImageAndTopBottonMenu.Size = new System.Drawing.Size(858, 482);
+            this.TholderOfImageAndTopBottonMenu.Size = new System.Drawing.Size(858, 554);
             this.TholderOfImageAndTopBottonMenu.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 93);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(852, 458);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // THolderOfMainTables
             // 
@@ -189,7 +170,7 @@
             this.THolderOfMainTables.Name = "THolderOfMainTables";
             this.THolderOfMainTables.RowCount = 1;
             this.THolderOfMainTables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.THolderOfMainTables.Size = new System.Drawing.Size(984, 488);
+            this.THolderOfMainTables.Size = new System.Drawing.Size(984, 560);
             this.THolderOfMainTables.TabIndex = 4;
             // 
             // THolderOFLeftButtons
@@ -209,7 +190,7 @@
             this.THolderOFLeftButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.THolderOFLeftButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.THolderOFLeftButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.THolderOFLeftButtons.Size = new System.Drawing.Size(114, 482);
+            this.THolderOFLeftButtons.Size = new System.Drawing.Size(114, 554);
             this.THolderOFLeftButtons.TabIndex = 1;
             // 
             // addfileBotton
@@ -220,7 +201,7 @@
             this.addfileBotton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.addfileBotton.Location = new System.Drawing.Point(3, 3);
             this.addfileBotton.Name = "addfileBotton";
-            this.addfileBotton.Size = new System.Drawing.Size(108, 90);
+            this.addfileBotton.Size = new System.Drawing.Size(108, 104);
             this.addfileBotton.TabIndex = 0;
             this.addfileBotton.UseVisualStyleBackColor = true;
             this.addfileBotton.Click += new System.EventHandler(this.addfileBotton_Click);
@@ -230,21 +211,22 @@
             this.searchFiltButt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchFiltButt.BackgroundImage")));
             this.searchFiltButt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.searchFiltButt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchFiltButt.Location = new System.Drawing.Point(3, 99);
+            this.searchFiltButt.Location = new System.Drawing.Point(3, 113);
             this.searchFiltButt.Name = "searchFiltButt";
-            this.searchFiltButt.Size = new System.Drawing.Size(108, 90);
+            this.searchFiltButt.Size = new System.Drawing.Size(108, 104);
             this.searchFiltButt.TabIndex = 1;
             this.searchFiltButt.UseVisualStyleBackColor = true;
             this.searchFiltButt.Click += new System.EventHandler(this.searchFiltButt_Click);
             // 
             // archive
             // 
+            this.archive.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("archive.BackgroundImage")));
+            this.archive.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.archive.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.archive.Location = new System.Drawing.Point(3, 195);
+            this.archive.Location = new System.Drawing.Point(3, 223);
             this.archive.Name = "archive";
-            this.archive.Size = new System.Drawing.Size(108, 90);
+            this.archive.Size = new System.Drawing.Size(108, 104);
             this.archive.TabIndex = 2;
-            this.archive.Text = "آرشیو فایل";
             this.archive.UseVisualStyleBackColor = true;
             this.archive.Click += new System.EventHandler(this.archive_Click);
             // 
@@ -309,11 +291,30 @@
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.newMessage);
+            this.panel1.Controls.Add(this.inbox);
+            this.panel1.Location = new System.Drawing.Point(769, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(80, 78);
+            this.panel1.TabIndex = 7;
+            // 
+            // newMessage
+            // 
+            this.newMessage.AutoSize = true;
+            this.newMessage.BackColor = System.Drawing.Color.White;
+            this.newMessage.ForeColor = System.Drawing.Color.Red;
+            this.newMessage.Location = new System.Drawing.Point(3, 3);
+            this.newMessage.Name = "newMessage";
+            this.newMessage.Size = new System.Drawing.Size(0, 13);
+            this.newMessage.TabIndex = 0;
+            // 
             // main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 512);
+            this.ClientSize = new System.Drawing.Size(984, 584);
             this.Controls.Add(this.THolderOfMainTables);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
@@ -325,10 +326,13 @@
             this.THolderofTopBottonMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.TholderOfImageAndTopBottonMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.THolderOfMainTables.ResumeLayout(false);
             this.THolderOFLeftButtons.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -336,10 +340,7 @@
 
         #endregion
         private Telerik.WinControls.UI.RadPanel RightPanel;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button inbox;
         private System.Windows.Forms.Button getDateForm;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel THolderofTopBottonMenu;
@@ -358,6 +359,9 @@
         private System.Windows.Forms.ToolStripMenuItem ابزارهاToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem عملیاتToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label newMessage;
     }
 }
 

@@ -142,16 +142,23 @@
             this.hasRoofGarden = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.hasGym = new System.Windows.Forms.CheckBox();
             this.hasHall = new System.Windows.Forms.CheckBox();
+            this.no_tabdil = new System.Windows.Forms.CheckBox();
+            this.tabdil = new System.Windows.Forms.CheckBox();
+            this.hasGym = new System.Windows.Forms.CheckBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.isMobleee = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
             this.radPanel12 = new Telerik.WinControls.UI.RadPanel();
             this.eslahi = new System.Windows.Forms.TextBox();
             this.radPanel15 = new Telerik.WinControls.UI.RadPanel();
             this.ertefa = new System.Windows.Forms.TextBox();
+            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
+            this.wc = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.la42 = new System.Windows.Forms.Label();
             this.radPanel10 = new Telerik.WinControls.UI.RadPanel();
@@ -254,13 +261,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.radPanel35 = new Telerik.WinControls.UI.RadPanel();
             this.refresh = new System.Windows.Forms.PictureBox();
-            this.radPanel1 = new Telerik.WinControls.UI.RadPanel();
-            this.wc = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.tabdil = new System.Windows.Forms.CheckBox();
-            this.no_tabdil = new System.Windows.Forms.CheckBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.wishoff)).BeginInit();
             this.tableLayoutPanel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel52)).BeginInit();
@@ -325,6 +326,8 @@
             this.radPanel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel15)).BeginInit();
             this.radPanel15.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
+            this.radPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).BeginInit();
             this.radPanel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel18)).BeginInit();
@@ -392,8 +395,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).BeginInit();
             this.radPanel35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refresh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
-            this.radPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // zirbana3
@@ -553,12 +554,13 @@
             // wishoff
             // 
             this.wishoff.Image = global::realstate.Properties.Resources.down;
-            this.wishoff.Location = new System.Drawing.Point(19, 660);
+            this.wishoff.Location = new System.Drawing.Point(383, 660);
             this.wishoff.Name = "wishoff";
             this.wishoff.Size = new System.Drawing.Size(30, 30);
             this.wishoff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.wishoff.TabIndex = 249;
             this.wishoff.TabStop = false;
+            this.wishoff.Visible = false;
             this.wishoff.Click += new System.EventHandler(this.wishoff_Click);
             // 
             // tableLayoutPanel24
@@ -1539,20 +1541,20 @@
             this.tableLayoutPanel18.Controls.Add(this.seraydar, 2, 1);
             this.tableLayoutPanel18.Controls.Add(this.senn, 1, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(692, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(693, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.15585F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.84415F));
-            this.tableLayoutPanel18.Size = new System.Drawing.Size(426, 63);
+            this.tableLayoutPanel18.Size = new System.Drawing.Size(425, 63);
             this.tableLayoutPanel18.TabIndex = 27;
             // 
             // la56
             // 
             this.la56.AutoSize = true;
             this.la56.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.la56.Location = new System.Drawing.Point(217, 0);
+            this.la56.Location = new System.Drawing.Point(216, 0);
             this.la56.Name = "la56";
             this.la56.Size = new System.Drawing.Size(100, 27);
             this.la56.TabIndex = 241;
@@ -1568,7 +1570,7 @@
             this.garmayesh_sarmayesh.Location = new System.Drawing.Point(3, 30);
             this.garmayesh_sarmayesh.Name = "garmayesh_sarmayesh";
             this.garmayesh_sarmayesh.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.garmayesh_sarmayesh.Size = new System.Drawing.Size(102, 28);
+            this.garmayesh_sarmayesh.Size = new System.Drawing.Size(101, 28);
             this.garmayesh_sarmayesh.TabIndex = 36;
             // 
             // sanad
@@ -1577,7 +1579,7 @@
             this.sanad.Font = new System.Drawing.Font("B Nazanin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.sanad.FormattingEnabled = true;
             this.sanad.IntegralHeight = false;
-            this.sanad.Location = new System.Drawing.Point(323, 30);
+            this.sanad.Location = new System.Drawing.Point(322, 30);
             this.sanad.Name = "sanad";
             this.sanad.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.sanad.Size = new System.Drawing.Size(100, 28);
@@ -1587,7 +1589,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Location = new System.Drawing.Point(111, 0);
+            this.label8.Location = new System.Drawing.Point(110, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 27);
             this.label8.TabIndex = 241;
@@ -1600,7 +1602,7 @@
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Location = new System.Drawing.Point(3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(102, 27);
+            this.label10.Size = new System.Drawing.Size(101, 27);
             this.label10.TabIndex = 243;
             this.label10.Text = "سرمایش گرمایش";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1609,7 +1611,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(323, 0);
+            this.label11.Location = new System.Drawing.Point(322, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(100, 27);
             this.label11.TabIndex = 239;
@@ -1622,7 +1624,7 @@
             this.seraydar.Font = new System.Drawing.Font("B Nazanin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.seraydar.FormattingEnabled = true;
             this.seraydar.IntegralHeight = false;
-            this.seraydar.Location = new System.Drawing.Point(111, 30);
+            this.seraydar.Location = new System.Drawing.Point(110, 30);
             this.seraydar.Name = "seraydar";
             this.seraydar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.seraydar.Size = new System.Drawing.Size(100, 28);
@@ -1634,7 +1636,7 @@
             this.senn.Font = new System.Drawing.Font("B Nazanin", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.senn.FormattingEnabled = true;
             this.senn.IntegralHeight = false;
-            this.senn.Location = new System.Drawing.Point(217, 30);
+            this.senn.Location = new System.Drawing.Point(216, 30);
             this.senn.Name = "senn";
             this.senn.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.senn.Size = new System.Drawing.Size(100, 28);
@@ -1853,18 +1855,6 @@
             this.label23.Text = "سالن ورزشی";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // hasGym
-            // 
-            this.hasGym.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.hasGym.AutoSize = true;
-            this.hasGym.Location = new System.Drawing.Point(236, 31);
-            this.hasGym.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
-            this.hasGym.Name = "hasGym";
-            this.hasGym.Size = new System.Drawing.Size(15, 14);
-            this.hasGym.TabIndex = 189;
-            this.hasGym.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.hasGym.UseVisualStyleBackColor = true;
-            // 
             // hasHall
             // 
             this.hasHall.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1877,6 +1867,63 @@
             this.hasHall.TabIndex = 190;
             this.hasHall.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.hasHall.UseVisualStyleBackColor = true;
+            // 
+            // no_tabdil
+            // 
+            this.no_tabdil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.no_tabdil.AutoSize = true;
+            this.no_tabdil.Location = new System.Drawing.Point(39, 31);
+            this.no_tabdil.Name = "no_tabdil";
+            this.no_tabdil.Size = new System.Drawing.Size(15, 14);
+            this.no_tabdil.TabIndex = 196;
+            this.no_tabdil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.no_tabdil.UseVisualStyleBackColor = true;
+            // 
+            // tabdil
+            // 
+            this.tabdil.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tabdil.AutoSize = true;
+            this.tabdil.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabdil.Location = new System.Drawing.Point(133, 31);
+            this.tabdil.Name = "tabdil";
+            this.tabdil.Size = new System.Drawing.Size(15, 14);
+            this.tabdil.TabIndex = 195;
+            this.tabdil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.tabdil.UseVisualStyleBackColor = true;
+            // 
+            // hasGym
+            // 
+            this.hasGym.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.hasGym.AutoSize = true;
+            this.hasGym.Location = new System.Drawing.Point(236, 31);
+            this.hasGym.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
+            this.hasGym.Name = "hasGym";
+            this.hasGym.Size = new System.Drawing.Size(15, 14);
+            this.hasGym.TabIndex = 189;
+            this.hasGym.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.hasGym.UseVisualStyleBackColor = true;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label24.Location = new System.Drawing.Point(97, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(88, 28);
+            this.label24.TabIndex = 197;
+            this.label24.Text = "قابل تبدیل";
+            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label25.Location = new System.Drawing.Point(3, 0);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(88, 28);
+            this.label25.TabIndex = 198;
+            this.label25.Text = "غیر قابل تبدیل";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // isMobleee
             // 
@@ -1946,8 +1993,19 @@
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.45454F));
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.54546F));
-            this.tableLayoutPanel17.Size = new System.Drawing.Size(683, 63);
+            this.tableLayoutPanel17.Size = new System.Drawing.Size(684, 63);
             this.tableLayoutPanel17.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Location = new System.Drawing.Point(567, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(114, 28);
+            this.label13.TabIndex = 243;
+            this.label13.Text = "سرویس بهداشتی";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel12
             // 
@@ -1996,6 +2054,30 @@
             this.ertefa.Size = new System.Drawing.Size(78, 13);
             this.ertefa.TabIndex = 85;
             this.ertefa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // radPanel1
+            // 
+            this.radPanel1.BackColor = System.Drawing.Color.White;
+            this.radPanel1.Controls.Add(this.wc);
+            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.radPanel1.Location = new System.Drawing.Point(567, 31);
+            this.radPanel1.Name = "radPanel1";
+            this.radPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.radPanel1.Size = new System.Drawing.Size(114, 29);
+            this.radPanel1.TabIndex = 243;
+            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel1.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
+            // 
+            // wc
+            // 
+            this.wc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.wc.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wc.Location = new System.Drawing.Point(5, 5);
+            this.wc.Name = "wc";
+            this.wc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.wc.Size = new System.Drawing.Size(104, 13);
+            this.wc.TabIndex = 82;
+            this.wc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label6
             // 
@@ -3241,18 +3323,19 @@
             // saveToPrivate
             // 
             this.saveToPrivate.Image = ((System.Drawing.Image)(resources.GetObject("saveToPrivate.Image")));
-            this.saveToPrivate.Location = new System.Drawing.Point(57, 659);
+            this.saveToPrivate.Location = new System.Drawing.Point(421, 659);
             this.saveToPrivate.Name = "saveToPrivate";
             this.saveToPrivate.Size = new System.Drawing.Size(30, 30);
             this.saveToPrivate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.saveToPrivate.TabIndex = 252;
             this.saveToPrivate.TabStop = false;
+            this.saveToPrivate.Visible = false;
             this.saveToPrivate.Click += new System.EventHandler(this.saveToPrivate_Click);
             // 
             // next
             // 
             this.next.Image = ((System.Drawing.Image)(resources.GetObject("next.Image")));
-            this.next.Location = new System.Drawing.Point(129, 659);
+            this.next.Location = new System.Drawing.Point(48, 660);
             this.next.Name = "next";
             this.next.Size = new System.Drawing.Size(30, 30);
             this.next.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3263,7 +3346,7 @@
             // back
             // 
             this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
-            this.back.Location = new System.Drawing.Point(93, 659);
+            this.back.Location = new System.Drawing.Point(12, 659);
             this.back.Name = "back";
             this.back.Size = new System.Drawing.Size(30, 30);
             this.back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3274,12 +3357,13 @@
             // whishon
             // 
             this.whishon.Image = global::realstate.Properties.Resources.up;
-            this.whishon.Location = new System.Drawing.Point(20, 659);
+            this.whishon.Location = new System.Drawing.Point(342, 660);
             this.whishon.Name = "whishon";
             this.whishon.Size = new System.Drawing.Size(30, 30);
             this.whishon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.whishon.TabIndex = 248;
             this.whishon.TabStop = false;
+            this.whishon.Visible = false;
             this.whishon.Click += new System.EventHandler(this.whishon_Click);
             // 
             // tableLayoutPanel1
@@ -3335,7 +3419,7 @@
             this.refresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
-            this.refresh.Location = new System.Drawing.Point(167, 659);
+            this.refresh.Location = new System.Drawing.Point(186, 660);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(43, 30);
             this.refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3343,85 +3427,17 @@
             this.refresh.TabStop = false;
             this.refresh.Visible = false;
             // 
-            // radPanel1
+            // checkBox1
             // 
-            this.radPanel1.BackColor = System.Drawing.Color.White;
-            this.radPanel1.Controls.Add(this.wc);
-            this.radPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.radPanel1.Location = new System.Drawing.Point(567, 31);
-            this.radPanel1.Name = "radPanel1";
-            this.radPanel1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.radPanel1.Size = new System.Drawing.Size(113, 29);
-            this.radPanel1.TabIndex = 243;
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel1.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel1.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
-            // 
-            // wc
-            // 
-            this.wc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.wc.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.wc.Location = new System.Drawing.Point(5, 5);
-            this.wc.Name = "wc";
-            this.wc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.wc.Size = new System.Drawing.Size(103, 15);
-            this.wc.TabIndex = 82;
-            this.wc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(567, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 28);
-            this.label13.TabIndex = 243;
-            this.label13.Text = "سرویس بهداشتی";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tabdil
-            // 
-            this.tabdil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tabdil.AutoSize = true;
-            this.tabdil.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tabdil.Location = new System.Drawing.Point(133, 31);
-            this.tabdil.Name = "tabdil";
-            this.tabdil.Size = new System.Drawing.Size(15, 14);
-            this.tabdil.TabIndex = 195;
-            this.tabdil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.tabdil.UseVisualStyleBackColor = true;
-            // 
-            // no_tabdil
-            // 
-            this.no_tabdil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.no_tabdil.AutoSize = true;
-            this.no_tabdil.Location = new System.Drawing.Point(39, 31);
-            this.no_tabdil.Name = "no_tabdil";
-            this.no_tabdil.Size = new System.Drawing.Size(15, 14);
-            this.no_tabdil.TabIndex = 196;
-            this.no_tabdil.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.no_tabdil.UseVisualStyleBackColor = true;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label24.Location = new System.Drawing.Point(97, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(88, 28);
-            this.label24.TabIndex = 197;
-            this.label24.Text = "قابل تبدیل";
-            this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label25.Location = new System.Drawing.Point(3, 0);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(88, 28);
-            this.label25.TabIndex = 198;
-            this.label25.Text = "غیر قابل تبدیل";
-            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(88, 668);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.checkBox1.Size = new System.Drawing.Size(82, 17);
+            this.checkBox1.TabIndex = 263;
+            this.checkBox1.Text = "منقضی شده";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ItemDetail
             // 
@@ -3429,6 +3445,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1142, 713);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.wishoff);
             this.Controls.Add(this.tableLayoutPanel24);
@@ -3546,6 +3563,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel15)).EndInit();
             this.radPanel15.ResumeLayout(false);
             this.radPanel15.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
+            this.radPanel1.ResumeLayout(false);
+            this.radPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel10)).EndInit();
             this.radPanel10.ResumeLayout(false);
             this.radPanel10.PerformLayout();
@@ -3636,9 +3656,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).EndInit();
             this.radPanel35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.refresh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).EndInit();
-            this.radPanel1.ResumeLayout(false);
-            this.radPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3877,5 +3894,6 @@
         private System.Windows.Forms.Label label13;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private System.Windows.Forms.TextBox wc;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

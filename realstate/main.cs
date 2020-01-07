@@ -29,6 +29,8 @@ using Telerik.WinControls.Layouts;
 
 using realstate.Classes;
 using realstate.ListOfAdds;
+using realstate.VM;
+using realstate.ListOfAdds.Inbox;
 
 namespace realstate
 {
@@ -74,12 +76,30 @@ namespace realstate
             allControls.ForEach(k => k.Font = GlobalVariable.headerlistFONT);
             this.CenterToScreen();
             dataLable.Text = dateTimeConvert.ToPersianDateString(DateTime.Now);
-
+            manager.delinbox();
+            getInbox();// admin only get any message from internetServer
+            getNewMessageNumber(System.Environment.MachineName);// user
         }
-
+        private void getNewMessageNumber(string name)
+        {
+            int count = 0;
+            string srt = manager.GetLatestMessageNumber(name);
+            if (srt.Length > 1)
+            {
+                GlobalVariable.notSeenInbox = srt;
+                srt = srt.Substring(1, srt.Length - 2);
+                count = srt.Split(',').ToList().Count();
+            }
+           
+            if (count > 0)
+            {
+                newMessage.Text = count.ToString();
+            }
+        }
         private void register_Click(object sender, EventArgs e)
         {
-
+            Register REGISTER = new Register();
+            REGISTER.Show();
         }
 
         private void archive_Click(object sender, EventArgs e)
@@ -284,6 +304,40 @@ namespace realstate
             }
         }
 
+        private void inbox_Click(object sender, EventArgs e)
+        {
+            
+            Message message = new Message();
+            message.Show();
 
+        }
+        
+        private void getInbox()
+        {
+            string result = "";
+            using (WebClient client = new WebClient())
+            {
+                var collection = new System.Collections.Specialized.NameValueCollection();
+                collection.Add("serial-number", "1111-1111-1111-1111");
+                collection.Add("after-date", DateTime.Now.ToString());
+
+
+
+                //  string json = JsonConvert.SerializeObject(collection, Formatting.Indented);
+                byte[] response =
+                client.UploadValues("http://Arvandfile.com/api/v2/inbox", collection);
+                result = System.Text.Encoding.UTF8.GetString(response);
+                InboxVM model = JsonConvert.DeserializeObject<InboxVM>(result);
+                if (model.status == 200)
+                {
+                    foreach (var item in model.data.list)
+                    {
+                        manager.addToInbox(item);
+                    }
+                }
+
+
+            }
+        }
     }
 }

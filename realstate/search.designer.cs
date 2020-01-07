@@ -634,6 +634,7 @@
             this.mantaghe_id.Name = "mantaghe_id";
             this.mantaghe_id.Size = new System.Drawing.Size(59, 21);
             this.mantaghe_id.TabIndex = 3;
+            this.mantaghe_id.SelectedIndexChanged += new System.EventHandler(this.mantaghe_id_SelectedIndexChanged);
             // 
             // label3
             // 

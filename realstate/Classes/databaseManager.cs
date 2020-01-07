@@ -129,6 +129,65 @@ namespace realstate
             context.SaveChanges();
 
         }
+         public void addToInbox(ListOfAdds.Inbox.List input)
+        {
+            DateTime Date = Convert.ToDateTime(input.date);
+            Inbox model = new Inbox() {
+
+                message = input.message,
+                date = Date,
+                title = input.title,
+                to = input.to,
+                userWatched = ""
+            };
+            if (context.Inboxes.Any(x => x.date == Date && x.title == input.title)) return;
+            context.Inboxes.Add(model);
+            context.SaveChanges();
+        }
+        public void delinbox()
+        {
+            context.Inboxes.RemoveRange(context.Inboxes);
+            context.SaveChanges();
+        }
+        public List<Inbox> GetLatestMessage(string name, string search)
+        {
+            List<Inbox> list = new List<Inbox>();
+            foreach (var item in context.Inboxes.Where(x => !x.userWatched.Contains(name)).ToList())
+            {
+                item.userWatched = item.userWatched + "," + name;
+            }
+               
+            try
+            {
+                if (search != "")
+                {
+                    list = context.Inboxes.Where(x=>x.title.Contains(search) || x.message.Contains(search)).OrderByDescending(x => x.date).ToList();
+
+                }
+                else
+                {
+                    list = context.Inboxes.OrderByDescending(x => x.date).ToList();
+
+                }
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            return list;
+        }
+        public string GetLatestMessageNumber(string name)
+        {
+            string srt = ",";
+            List<Guid> count = context.Inboxes.Where(x => !x.userWatched.Contains(name)).Select(x => x.ID).ToList();
+
+            foreach (var item in count)
+            {
+                srt = srt + item + ",";
+            }
+            return srt;
+        }
         public List<item> getArchive(string name)
         {
             List<item> list = new List<item>();

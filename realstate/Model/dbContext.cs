@@ -18,6 +18,8 @@ namespace realstate.Model
         public DbSet<item> items { get; set; }
         public DbSet<archive> Archives { get; set; }
         public DbSet<CatesAndAreas> catDatas { get; set; }
+        public DbSet<Inbox>  Inboxes { get; set; }
         
+
     }
 }

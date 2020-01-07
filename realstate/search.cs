@@ -988,7 +988,33 @@ namespace realstate
             }
         }
 
-       
+        private void mantaghe_id_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mantaghe_id_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            string id = comboBox.SelectedValue.ToString();
+            if(id != "" || id != "0")
+            {
+                mantaghe_name.DisplayMember = "title";
+                mantaghe_name.ValueMember = "ID";
+                List<Mantaghe> list = log.data.list.mantaghe.Where(x => x.mantaghe_id == id).ToList();
+                mantaghe_name.DataSource = new BindingSource(list, null);
+            }
+            else
+            {
+                mantaghe_name.DisplayMember = "title";
+                mantaghe_name.ValueMember = "ID";
+                List<Mantaghe> list = log.data.list.mantaghe.ToList();
+                mantaghe_name.DataSource = new BindingSource(list, null);
+            }
+            
+        }
+
+
 
 
 

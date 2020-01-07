@@ -417,7 +417,7 @@ namespace realstate
             }
             else
             {
-                string id = listGrid.Rows[row].Cells[3].Value.ToString();
+                string id = listGrid.Rows[row].Cells[2].Value.ToString();
 
                 item selecteditem = manager.getitem(Convert.ToInt32(id));
                 string srt = JsonConvert.SerializeObject(selecteditem);

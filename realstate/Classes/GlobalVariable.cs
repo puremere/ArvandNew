@@ -31,7 +31,7 @@ namespace realstate
         public static string mantagheIDes = "";
         //جهت انتخاب چک باکس لیست
         public static string temporaryOwnList = "";
-       
+        public static string notSeenInbox = null;
 
     }
 

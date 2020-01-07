@@ -90,9 +90,29 @@ namespace realstate
         public string metri { get; set; }
     }
 
-  
+    public class Inbox
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
+        public string message { get; set; }
+        public DateTime date { get; set; }
+        public string title { get; set; }
+        public string to { get; set; }
+        public string userWatched { get; set; }
+    }
+    public class NewInbox
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
+        public string message { get; set; }
+        public string date { get; set; }
+        public string title { get; set; }
+        public string to { get; set; }
+        public string userWatched { get; set; }
+    }
 
-   
     public class image
     {
 

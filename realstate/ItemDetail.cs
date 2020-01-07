@@ -20,6 +20,8 @@ using System.Windows.Forms;
 using Telerik.WinControls.UI;
 using realstate.Classes;
 using realstate.ListOfAdds;
+using System.Net;
+using realstate.VM;
 
 namespace realstate
 {
@@ -495,23 +497,23 @@ namespace realstate
 
 
 
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
+        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        //{
            
-            //capture left arrow key
-            if (keyData == Keys.Left)
-            {
-                bringPreData();
-                return true;
-            }
-            //capture right arrow key
-            if (keyData == Keys.Right)
-            {
-                bringNextData();
-                return true;
-            }
-            return base.ProcessCmdKey(ref msg, keyData);
-        }
+        //    //capture left arrow key
+        //    if (keyData == Keys.Left)
+        //    {
+        //        bringPreData();
+        //        return true;
+        //    }
+        //    //capture right arrow key
+        //    if (keyData == Keys.Right)
+        //    {
+        //        bringNextData();
+        //        return true;
+        //    }
+        //    return base.ProcessCmdKey(ref msg, keyData);
+        //}
        
 
        
@@ -720,6 +722,43 @@ namespace realstate
                 final = string.Format(CultureInfo.InvariantCulture, "{0:#,##0}", Convert.ToInt64(value));
             }
             return final;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (sender is CheckBox)
+            {
+                string controlVal = ((CheckBox)sender).Checked.ToString();
+                string result = "";
+                if (controlVal == "True")
+                {
+                    using (WebClient client = new WebClient())
+                    {
+                        var collection = new System.Collections.Specialized.NameValueCollection();
+                        collection.Add("serial-number", "1111-1111-1111-1111");
+                        collection.Add("fileID", ID.Text);
+
+
+
+                        //  string json = JsonConvert.SerializeObject(collection, Formatting.Indented);
+                        byte[] response =
+                        client.UploadValues("http://Arvandfile.com/api/v2/mark_as_expired", collection);
+                        result = System.Text.Encoding.UTF8.GetString(response);
+
+                        ExpireVM model = JsonConvert.DeserializeObject<ExpireVM>(result);
+                        if(model.status == 200)
+                        {
+                            MessageBox.Show("فایل مورد نظر  منقضی شد");
+                        }
+
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("فایل مورد نظر  فعال شد");
+                }
+            }
+
         }
     }
 }

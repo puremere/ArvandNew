@@ -234,9 +234,110 @@ namespace realstate.ListOfAdds
         public string zirzamin { get; set; }
         public string desc { get; set; }
     }
-    public class archive : item
+    public class archive 
     {
-   
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
+        public string userName { get; set; }
+        public string tabdil { get; set; }
+        public string no_tabdit { get; set; }
+        public string wc { get; set; }
+        public long number { get; set; }
+        public string title { get; set; }
+        public DateTime date_updated { get; set; }
+        public string phones { get; set; }
+        public string malek { get; set; }
+        public string mantaghe_name { get; set; }
+        public string mantaghe_id { get; set; }
+        public string address { get; set; }
+        public string address1 { get; set; }
+        public string address2 { get; set; }
+        public string address3 { get; set; }
+        public string isForoosh { get; set; }
+        public string isEjare { get; set; }
+        public string isRahn { get; set; }
+        public string isMosharekat { get; set; }
+        public string isMoaveze { get; set; }
+        public string hasEstakhr { get; set; }
+        public string hasSauna { get; set; }
+        public string hasJakoozi { get; set; }
+        public string hasGym { get; set; }
+        public string hasShooting { get; set; }
+        public string hasHall { get; set; }
+        public string hasRoofGarden { get; set; }
+        public string isMoble { get; set; }
+        public string hasLobbyMan { get; set; }
+        public string sell2khareji { get; set; }
+        public string maghaze { get; set; }
+        public string suit { get; set; }
+        public string samt { get; set; }
+        public string apartment { get; set; }
+        public string villa { get; set; }
+        public string mostaghellat { get; set; }
+        public string kolangi { get; set; }
+        public string office { get; set; }
+        public string seraydar { get; set; }
+        public string kaf_type { get; set; }
+        public string garmayesh_sarmayesh { get; set; }
+        public long total_floor { get; set; }
+        public long total_vahed { get; set; }
+        public long vahed_per_floor { get; set; }
+        public string gozar { get; set; }
+        public string sanad { get; set; }
+        public string takhlie { get; set; }
+        public long tabaghe1 { get; set; }
+        public long zirbana1 { get; set; }
+        public long bed1 { get; set; }
+        public string balkon1 { get; set; }
+        public string wc1 { get; set; }
+        public string ashpazkhane1 { get; set; }
+        public string parking1 { get; set; }
+        public string anbari1 { get; set; }
+        public string asansor1 { get; set; }
+        public long tabaghe2 { get; set; }
+        public long zirbana2 { get; set; }
+        public long bed2 { get; set; }
+        public string balkon2 { get; set; }
+        public string wc2 { get; set; }
+        public string ashpazkhane2 { get; set; }
+        public string parking2 { get; set; }
+        public string anbari2 { get; set; }
+        public string asansor2 { get; set; }
+        public long tabaghe3 { get; set; }
+        public long zirbana3 { get; set; }
+        public long bed3 { get; set; }
+        public string balkon3 { get; set; }
+        public string wc3 { get; set; }
+        public string ashpazkhane3 { get; set; }
+        public string parking3 { get; set; }
+        public string anbari3 { get; set; }
+        public string asansor3 { get; set; }
+        public long tabaghe_1_total_price { get; set; }
+        public long tabaghe_2_total_price { get; set; }
+        public long tabaghe_3_total_price { get; set; }
+        public long tabaghe_4_total_price { get; set; }
+        public long tabaghe_1_rahn { get; set; }
+        public long tabaghe_2_rahn { get; set; }
+        public long tabaghe_3_rahn { get; set; }
+        public long tabaghe_4_rahn { get; set; }
+        public long tabaghe_1_ejare { get; set; }
+        public long tabaghe_2_ejare { get; set; }
+        public long tabaghe_3_ejare { get; set; }
+        public long tabaghe_4_ejare { get; set; }
+        public long tabaghe_1_metri { get; set; }
+        public long tabaghe_2_metri { get; set; }
+        public long tabaghe_3_metri { get; set; }
+        public long tabaghe_4_metri { get; set; }
+        public long masahat_zamin { get; set; }
+        public int senn { get; set; }
+        public string ashpazkhane { get; set; }
+        public string tarakom { get; set; }
+        public string toole_bar { get; set; }
+        public string ertefa { get; set; }
+        public string eslahi { get; set; }
+        public string zirzamin { get; set; }
+        public string desc { get; set; }
     }
 
     public class CatesAndAreas {
@@ -268,5 +369,8 @@ namespace realstate.ListOfAdds
         public string Address2 { get; set; }
         public string Address3 { get; set; }
     }
+
+
    
+
 }
