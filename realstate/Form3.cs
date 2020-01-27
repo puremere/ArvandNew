@@ -42,9 +42,11 @@ namespace realstate
             GlobalVariable.headerlistFONT = new Font(fonts.Families[0], 9.0F, System.Drawing.FontStyle.Regular);
             GlobalVariable.headerlistFONTsmall = new Font(fonts.Families[0], 8.0F, System.Drawing.FontStyle.Regular);
             GlobalVariable.headerlistFONTBold = new Font(fonts.Families[0], 11.0F, System.Drawing.FontStyle.Bold);
+            GlobalVariable.HlistFONT = new Font(fonts.Families[0], 18.0F, System.Drawing.FontStyle.Regular);
+            GlobalVariable.shoonzdah = new Font(fonts.Families[0], 16.0F, System.Drawing.FontStyle.Regular);
+           
 
-
-            List<Control> allControls = fontclass.GetAllControls(this);
+            List <Control> allControls = fontclass.GetAllControls(this);
             allControls.ForEach(k => k.Font = GlobalVariable.headerlistFONT);
 
         }

@@ -90,6 +90,16 @@ namespace realstate
         public string metri { get; set; }
     }
 
+    public class Ham
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid ID { get; set; }
+        public string title { get; set; }
+        public string content { get; set; }
+
+
+    }
     public class Inbox
     {
         [Key]

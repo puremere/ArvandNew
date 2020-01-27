@@ -216,11 +216,6 @@
             this.tableLayoutPanel29 = new System.Windows.Forms.TableLayoutPanel();
             this.radPanel38 = new Telerik.WinControls.UI.RadPanel();
             this.label59 = new System.Windows.Forms.Label();
-            this.roundRectShape1 = new Telerik.WinControls.RoundRectShape(this.components);
-            this.radPanel37 = new Telerik.WinControls.UI.RadPanel();
-            this.label58 = new System.Windows.Forms.Label();
-            this.radPanel34 = new Telerik.WinControls.UI.RadPanel();
-            this.label55 = new System.Windows.Forms.Label();
             this.radPanel35 = new Telerik.WinControls.UI.RadPanel();
             this.label56 = new System.Windows.Forms.Label();
             this.deletepanel = new Telerik.WinControls.UI.RadPanel();
@@ -338,10 +333,6 @@
             this.tableLayoutPanel29.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel38)).BeginInit();
             this.radPanel38.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel37)).BeginInit();
-            this.radPanel37.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel34)).BeginInit();
-            this.radPanel34.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).BeginInit();
             this.radPanel35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deletepanel)).BeginInit();
@@ -2878,19 +2869,17 @@
             // 
             this.tableLayoutPanel29.BackColor = System.Drawing.Color.Transparent;
             this.tableLayoutPanel29.ColumnCount = 7;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 0.7523876F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 9.322262F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98507F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.98507F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel29.Controls.Add(this.radPanel38, 6, 0);
-            this.tableLayoutPanel29.Controls.Add(this.radPanel37, 5, 0);
-            this.tableLayoutPanel29.Controls.Add(this.radPanel34, 4, 0);
-            this.tableLayoutPanel29.Controls.Add(this.radPanel35, 3, 0);
-            this.tableLayoutPanel29.Controls.Add(this.deletepanel, 2, 0);
-            this.tableLayoutPanel29.Controls.Add(this.refresh, 1, 0);
+            this.tableLayoutPanel29.Controls.Add(this.refresh, 0, 0);
+            this.tableLayoutPanel29.Controls.Add(this.radPanel35, 5, 0);
+            this.tableLayoutPanel29.Controls.Add(this.deletepanel, 4, 0);
             this.tableLayoutPanel29.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel29.Location = new System.Drawing.Point(3, 547);
@@ -2907,22 +2896,18 @@
             this.radPanel38.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.radPanel38.Controls.Add(this.label59);
             this.radPanel38.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radPanel38.Location = new System.Drawing.Point(1094, 10);
+            this.radPanel38.Location = new System.Drawing.Point(1144, 10);
             this.radPanel38.Margin = new System.Windows.Forms.Padding(10);
             this.radPanel38.Name = "radPanel38";
             this.radPanel38.Padding = new System.Windows.Forms.Padding(5);
             // 
             // 
             // 
-            this.radPanel38.RootElement.Shape = this.roundRectShape1;
-            this.radPanel38.Size = new System.Drawing.Size(224, 119);
+            this.radPanel38.Size = new System.Drawing.Size(174, 119);
             this.radPanel38.TabIndex = 201;
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel38.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5);
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel38.GetChildAt(0))).Shape = this.roundRectShape1;
-            ((Telerik.WinControls.Primitives.FillPrimitive)(this.radPanel38.GetChildAt(0).GetChildAt(0))).Shape = this.roundRectShape1;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel38.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel38.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel38.GetChildAt(0).GetChildAt(1))).Shape = this.roundRectShape1;
             // 
             // label59
             // 
@@ -2933,77 +2918,11 @@
             this.label59.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label59.Location = new System.Drawing.Point(5, 5);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(214, 109);
+            this.label59.Size = new System.Drawing.Size(164, 109);
             this.label59.TabIndex = 94;
             this.label59.Text = "جستجو";
             this.label59.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label59.Click += new System.EventHandler(this.label59_Click);
-            // 
-            // roundRectShape1
-            // 
-            this.roundRectShape1.IsRightToLeft = false;
-            // 
-            // radPanel37
-            // 
-            this.radPanel37.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel37.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radPanel37.BackgroundImage")));
-            this.radPanel37.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radPanel37.Controls.Add(this.label58);
-            this.radPanel37.Location = new System.Drawing.Point(856, 10);
-            this.radPanel37.Margin = new System.Windows.Forms.Padding(10);
-            this.radPanel37.Name = "radPanel37";
-            this.radPanel37.Padding = new System.Windows.Forms.Padding(5);
-            this.radPanel37.Size = new System.Drawing.Size(218, 119);
-            this.radPanel37.TabIndex = 200;
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel37.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5);
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel37.GetChildAt(0))).Shape = this.roundRectShape1;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel37.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel37.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            // 
-            // label58
-            // 
-            this.label58.BackColor = System.Drawing.Color.Transparent;
-            this.label58.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label58.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label58.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label58.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label58.Location = new System.Drawing.Point(5, 5);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(208, 109);
-            this.label58.TabIndex = 94;
-            this.label58.Text = "علاقه مندی ها";
-            this.label58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label58.Click += new System.EventHandler(this.label58_Click);
-            // 
-            // radPanel34
-            // 
-            this.radPanel34.BackColor = System.Drawing.Color.Transparent;
-            this.radPanel34.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radPanel34.BackgroundImage")));
-            this.radPanel34.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.radPanel34.Controls.Add(this.label55);
-            this.radPanel34.Location = new System.Drawing.Point(618, 10);
-            this.radPanel34.Margin = new System.Windows.Forms.Padding(10);
-            this.radPanel34.Name = "radPanel34";
-            this.radPanel34.Padding = new System.Windows.Forms.Padding(5);
-            this.radPanel34.Size = new System.Drawing.Size(218, 119);
-            this.radPanel34.TabIndex = 202;
-            ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel34.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5);
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel34.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
-            ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel34.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
-            // 
-            // label55
-            // 
-            this.label55.BackColor = System.Drawing.Color.Transparent;
-            this.label55.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label55.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label55.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label55.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.label55.Location = new System.Drawing.Point(5, 5);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(208, 109);
-            this.label55.TabIndex = 94;
-            this.label55.Text = "فایل شخصی";
-            this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // radPanel35
             // 
@@ -3011,11 +2930,11 @@
             this.radPanel35.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("radPanel35.BackgroundImage")));
             this.radPanel35.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.radPanel35.Controls.Add(this.label56);
-            this.radPanel35.Location = new System.Drawing.Point(380, 10);
+            this.radPanel35.Location = new System.Drawing.Point(955, 10);
             this.radPanel35.Margin = new System.Windows.Forms.Padding(10);
             this.radPanel35.Name = "radPanel35";
             this.radPanel35.Padding = new System.Windows.Forms.Padding(5);
-            this.radPanel35.Size = new System.Drawing.Size(218, 119);
+            this.radPanel35.Size = new System.Drawing.Size(169, 119);
             this.radPanel35.TabIndex = 203;
             ((Telerik.WinControls.UI.RadPanelElement)(this.radPanel35.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel35.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
@@ -3030,7 +2949,7 @@
             this.label56.ForeColor = System.Drawing.SystemColors.Desktop;
             this.label56.Location = new System.Drawing.Point(5, 5);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(208, 109);
+            this.label56.Size = new System.Drawing.Size(159, 109);
             this.label56.TabIndex = 94;
             this.label56.Text = "فایل های امروز";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3042,11 +2961,11 @@
             this.deletepanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("deletepanel.BackgroundImage")));
             this.deletepanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.deletepanel.Controls.Add(this.delete);
-            this.deletepanel.Location = new System.Drawing.Point(142, 10);
+            this.deletepanel.Location = new System.Drawing.Point(766, 10);
             this.deletepanel.Margin = new System.Windows.Forms.Padding(10);
             this.deletepanel.Name = "deletepanel";
             this.deletepanel.Padding = new System.Windows.Forms.Padding(5);
-            this.deletepanel.Size = new System.Drawing.Size(218, 119);
+            this.deletepanel.Size = new System.Drawing.Size(169, 119);
             this.deletepanel.TabIndex = 196;
             ((Telerik.WinControls.UI.RadPanelElement)(this.deletepanel.GetChildAt(0))).Padding = new System.Windows.Forms.Padding(5);
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.deletepanel.GetChildAt(0).GetChildAt(1))).ForeColor = System.Drawing.Color.LightGray;
@@ -3061,7 +2980,7 @@
             this.delete.ForeColor = System.Drawing.SystemColors.Desktop;
             this.delete.Location = new System.Drawing.Point(5, 5);
             this.delete.Name = "delete";
-            this.delete.Size = new System.Drawing.Size(208, 109);
+            this.delete.Size = new System.Drawing.Size(159, 109);
             this.delete.TabIndex = 94;
             this.delete.Text = "حذف";
             this.delete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -3070,7 +2989,7 @@
             // refresh
             // 
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
-            this.refresh.Location = new System.Drawing.Point(12, 3);
+            this.refresh.Location = new System.Drawing.Point(3, 3);
             this.refresh.Name = "refresh";
             this.refresh.Padding = new System.Windows.Forms.Padding(15);
             this.refresh.Size = new System.Drawing.Size(117, 150);
@@ -3291,10 +3210,6 @@
             this.tableLayoutPanel29.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel38)).EndInit();
             this.radPanel38.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel37)).EndInit();
-            this.radPanel37.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radPanel34)).EndInit();
-            this.radPanel34.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).EndInit();
             this.radPanel35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.deletepanel)).EndInit();
@@ -3318,10 +3233,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel29;
         private Telerik.WinControls.UI.RadPanel radPanel38;
         private System.Windows.Forms.Label label59;
-        private Telerik.WinControls.UI.RadPanel radPanel37;
-        private System.Windows.Forms.Label label58;
-        private Telerik.WinControls.UI.RadPanel radPanel34;
-        private System.Windows.Forms.Label label55;
         private Telerik.WinControls.UI.RadPanel radPanel35;
         private System.Windows.Forms.Label label56;
         private Telerik.WinControls.UI.RadPanel deletepanel;
@@ -3491,7 +3402,6 @@
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.ComboBox kind;
         private System.Windows.Forms.Label label23;
-        private Telerik.WinControls.RoundRectShape roundRectShape1;
         private Telerik.WinControls.Tests.QAShape qaShape1;
         private Telerik.WinControls.UI.RadPanel radPanel25;
         private System.Windows.Forms.TextBox bed_to;

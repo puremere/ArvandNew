@@ -50,6 +50,16 @@ namespace realstate
             this.listGrid.Columns["Address1"].Visible = false;
             this.listGrid.Columns["Address2"].Visible = false;
             this.listGrid.Columns["Address3"].Visible = false;
+            this.listGrid.Columns["datetime"].Visible = false;
+            if (GlobalVariable.role != "admin")
+            {
+                this.listGrid.Columns["deleteItem"].Visible = false;
+            }
+            else
+            {
+                this.listGrid.Columns["deleteItem"].Visible = true;
+            }
+
         }
 
         databaseManager manager = new databaseManager();
@@ -68,8 +78,8 @@ namespace realstate
 
             
 
-            listGrid.Columns[8].DefaultCellStyle.Format = "N3";
-            listGrid.Columns[9].DefaultCellStyle.Format = "N3";
+            listGrid.Columns["rahn_total"].DefaultCellStyle.Format = "N3";
+            listGrid.Columns["ejare_metri"].DefaultCellStyle.Format = "N3";
 
             
             this.WindowState = FormWindowState.Maximized;
@@ -118,6 +128,18 @@ namespace realstate
             List<gridVM> model = JsonConvert.DeserializeObject<List<gridVM>>(GlobalVariable.lastSearchModel);
             switch (name)
             {
+                case ("dategrid"):
+                    if (Settings1.Default.date == "A")
+                    {
+                        model = model.OrderBy(x => x.datetime).ToList();
+                        Settings1.Default.date = "D";
+                    }
+                    else
+                    {
+                        model = model.OrderByDescending(x => x.datetime).ToList();
+                        Settings1.Default.date = "A";
+                    }
+                    break;
                 case ("Address"):
                     if (Settings1.Default.address == "A")
                     {
@@ -192,12 +214,13 @@ namespace realstate
                 CatsAndAreasObject CATS = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
 
                 List<gridVM> list = new List<gridVM>();
-                foreach (var item in manager.getList(query, ""))
+                foreach (var item in manager.getList(query))
                 {
                     if (GlobalVariable.searchTabghe == "")
                     {
                         GlobalVariable.searchTabghe = "1";
                     }
+                    string phones = item.phones;
                     string tabaghe = GlobalVariable.searchTabghe;
                     string fullprice = item.tabaghe_1_total_price.ToString();
                     string metriprice = item.tabaghe_1_metri.ToString();
@@ -252,27 +275,27 @@ namespace realstate
 
                     string melkkind = "";
 
-                    if (item.maghaze != null)
+                    if (item.maghaze != null && item.maghaze != "0")
                     {
                         melkkind = melkkind + "مغازه،";
                     }
-                    if (item.apartment != null)
+                    if (item.apartment != null && item.apartment != "0")
                     {
                         melkkind = melkkind + "آپارتمان،";
                     }
-                    if (item.villa != null)
+                    if (item.villa != null && item.villa != "0")
                     {
                         melkkind = melkkind + "ویلا،";
                     }
-                    if (item.mostaghellat != null)
+                    if (item.mostaghellat != null && item.mostaghellat != "0")
                     {
                         melkkind = melkkind + "مستغلات،";
                     }
-                    if (item.kolangi != null)
+                    if (item.kolangi != null && item.kolangi != "0")
                     {
                         melkkind = melkkind + "کلنگی،";
                     }
-                    if (item.office != null)
+                    if (item.office != null && item.office != "0")
                     {
                         melkkind = melkkind + "دفتر،";
                     }
@@ -314,40 +337,40 @@ namespace realstate
                     totalrahn = totalrahn.Replace(".", "");
                     if (totalrahn == "0")
                     {
-                        totalrahn = "-";
+                        totalrahn = "0";
                     }
                     else if (Convert.ToInt64(totalrahn) > 0)
                     {
                         string mytotal = string.Format(CultureInfo.InvariantCulture, "{0:0,0}", Convert.ToInt64(totalrahn));
                         totalrahn = mytotal;
                     }
-                    else if (totalrahn == "-1")
-                    {
-                        totalrahn = "توافقی";
-                    }
-                    else if (totalrahn == "-2")
-                    {
-                        totalrahn = "رایگان";
-                    }
+                    //else if (totalrahn == "-1")
+                    //{
+                    //    totalrahn = "توافقی";
+                    //}
+                    //else if (totalrahn == "-2")
+                    //{
+                    //    totalrahn = "رایگان";
+                    //}
 
                     metriejare = metriejare.Replace(".", "");
                     if (Convert.ToInt64(metriejare) == 0)
                     {
-                        metriejare = "-";
+                        metriejare = "0";
                     }
                     else if (Convert.ToInt64(metriejare) > 0)
                     {
                         string mymetriejare = string.Format(CultureInfo.InvariantCulture, "{0:0,0}", Convert.ToInt64(metriejare));
                         metriejare = mymetriejare;
                     }
-                    else if (metriejare == "-1")
-                    {
-                        metriejare = "توافقی";
-                    }
-                    else if (metriejare == "-2")
-                    {
-                        metriejare = "رایگان";
-                    }
+                    //else if (metriejare == "-1")
+                    //{
+                    //    metriejare = "توافقی";
+                    //}
+                    //else if (metriejare == "-2")
+                    //{
+                    //    metriejare = "رایگان";
+                    //}
                     if (GlobalVariable.temporaryOwnList.Contains(serverid + ","))
                     {
                         mycheckbox = true;
@@ -355,12 +378,13 @@ namespace realstate
                     gridVM newitem = new gridVM()
                     {
                         Address = item.address1 + item.address2 + item.address3,
-                        Address1 = item.address1 ,
-                        Address2 = item.address2 ,
-                        Address3 = item.address3 ,
+                        Address1 = item.address1,
+                        Address2 = item.address2,
+                        Address3 = item.address3,
                         bed = kha,
                         codegrid = item.number.ToString(),
                         dategrid = dateTimeConvert.ToPersianDateString(item.date_updated),
+                        datetime = item.date_updated,
                         ejare_metri = int.Parse(metriejare.Replace(",","")),
                         floorgrid = tabagh,
                         kindgrid = Dealkind,
@@ -369,7 +393,8 @@ namespace realstate
                         rahn_total = int.Parse(totalrahn.Replace(",","")),
                         zirbana = zirban,
                         checkbox = mycheckbox,
-                        Senn = senn
+                        Senn = senn,
+                        phones = phones
 
                     };
                     list.Add(newitem);
@@ -382,7 +407,7 @@ namespace realstate
 
 
             }
-            catch (Exception)
+            catch (Exception error)
             {
                 e.Result = "error";
             }
@@ -409,57 +434,81 @@ namespace realstate
             int row = e.RowIndex;
             if (listGrid.Columns[column].Name == "Address")
             {
-                string address1 = listGrid.Rows[row].Cells[15].Value.ToString();
-                string address2 = listGrid.Rows[row].Cells[16].Value.ToString();
-                string address3 = listGrid.Rows[row].Cells[17].Value.ToString();
+                string address1 = listGrid.Rows[row].Cells["Address1"].Value.ToString();
+                string address2 = listGrid.Rows[row].Cells["Address2"].Value.ToString();
+                string address3 = listGrid.Rows[row].Cells["Address3"].Value.ToString();
                 getDataFromServer(address1, address2, address3);
 
             }
             else
             {
-                string id = listGrid.Rows[row].Cells[2].Value.ToString();
+                string id = listGrid.Rows[row].Cells["codegrid"].Value.ToString();
+                GlobalVariable.RowIDList.Clear();
+                for (int i =0; i< listGrid.Rows.Count; i++)
+                {
+                    GlobalVariable.RowIDList.Add(listGrid.Rows[i].Cells["codegrid"].Value.ToString());
 
+                }
                 item selecteditem = manager.getitem(Convert.ToInt32(id));
                 string srt = JsonConvert.SerializeObject(selecteditem);
                
-                ItemDetail detail = new ItemDetail(srt);
+                ItemDetail detail = new ItemDetail(srt, "field");
                 detail.Show();
             }
         }
         private void listGrid_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int count = this.listGrid.Rows.Count;
-            for (int i = 0; i < count; i++)
-            {
-                this.listGrid.Rows[i].Selected = false;
-            }
-            int column = e.ColumnIndex;
-            int row = e.RowIndex;
-
-            if (row > -1)
-            {
-                this.listGrid.Rows[row].Selected = true;
-
-            }
-            phone.Text = this.listGrid.Rows[row].Cells[1].Value.ToString().Substring(0, this.listGrid.Rows[row].Cells[1].Value.ToString().Length -1);
-            if (listGrid.Columns[column].Name == "checkbox")
-            {
-                if (this.listGrid.Rows[row].Cells[0].EditedFormattedValue.ToString() == "False")
+            try
+            { 
+               
+                int count = this.listGrid.Rows.Count;
+                for (int i = 0; i < count; i++)
                 {
-                    GlobalVariable.temporaryOwnList = GlobalVariable.temporaryOwnList + this.listGrid.Rows[row].Cells[2].Value.ToString() + ",";
+                    this.listGrid.Rows[i].Selected = false;
+                }
+                int column = e.ColumnIndex;
+                int row = e.RowIndex;
+
+                if (row > -1)
+                {
+                    this.listGrid.Rows[row].Selected = true;
+
+                }
+                if (listGrid.Columns[column].Name == "deleteItem")
+                {
+                    string id = this.listGrid.Rows[row].Cells["codegrid"].Value.ToString();
+                    deleteVrification del = new deleteVrification(id, "3","");
+                    del.Show();
                 }
                 else
                 {
-                    List<string> lst = GlobalVariable.temporaryOwnList.Split(',').ToList();
-                    lst.RemoveAt(lst.Count()-1);
-                    lst.Remove(this.listGrid.Rows[row].Cells[2].Value.ToString());
-                    GlobalVariable.temporaryOwnList = "";
-                    foreach (var item in lst)
+                    phone.Text = this.listGrid.Rows[row].Cells["phones"].Value.ToString().Substring(0, this.listGrid.Rows[row].Cells["phones"].Value.ToString().Length - 1);
+                    if (listGrid.Columns[column].Name == "checkbox")
                     {
-                        GlobalVariable.temporaryOwnList = GlobalVariable.temporaryOwnList + item + ",";
+                        if (this.listGrid.Rows[row].Cells["checkbox"].EditedFormattedValue.ToString() == "False")
+                        {
+                            GlobalVariable.temporaryOwnList = GlobalVariable.temporaryOwnList + this.listGrid.Rows[row].Cells["codegrid"].Value.ToString() + ",";
+                        }
+                        else
+                        {
+                            List<string> lst = GlobalVariable.temporaryOwnList.Split(',').ToList();
+                            lst.RemoveAt(lst.Count() - 1);
+                            lst.Remove(this.listGrid.Rows[row].Cells["codegrid"].Value.ToString());
+                            GlobalVariable.temporaryOwnList = "";
+                            foreach (var item in lst)
+                            {
+                                GlobalVariable.temporaryOwnList = GlobalVariable.temporaryOwnList + item + ",";
+                            }
+                        }
                     }
                 }
+               
             }
+            catch (Exception error)
+            {
+                
+            }
+            
         }
 
 
@@ -478,7 +527,7 @@ namespace realstate
                 item selecteditem = manager.getitem(Convert.ToInt32(item));
                 string srt = JsonConvert.SerializeObject(selecteditem);
 
-                ItemDetail detail = new ItemDetail(srt);
+                ItemDetail detail = new ItemDetail(srt, "field");
                 detail.Show();
             }
            
@@ -511,10 +560,21 @@ namespace realstate
         {
             List<string> lst = GlobalVariable.temporaryOwnList.Split(',').ToList();
             lst.RemoveAt(lst.Count - 1);
-            foreach (var item in lst)
+            if (lst.Count() > 0)
             {
-                manager.addToArchive(item, System.Environment.MachineName);
+                foreach (var item in lst)
+                {
+                    manager.addToArchive(item, System.Environment.MachineName);
+                }
+                MessageBox.Show("فایل های مورد نظر آرشیو شد");
+
             }
+            else
+            {
+                MessageBox.Show("موردی انتخاب نشده است");
+
+            }
+
 
         }
         
@@ -553,7 +613,7 @@ namespace realstate
             int nameIndex = 1;
             foreach (StiDataColumn column in dataSource.Columns)
             {
-                if (column.Name == "Senn" || column.Name == "_ID" || column.Name == "_Current" || column.Name == "checkbox" || column.Name == "codegrid") continue;
+                if ( column.Name == "mantagheName" || column.Name == "Senn" || column.Name == "_ID" || column.Name == "_Current" || column.Name == "checkbox" || column.Name == "codegrid" || column.Name == "datetime" || column.Name == "Address1" || column.Name == "Address2" || column.Name == "Address3") continue;
 
                 //Create text on header
                 StiText headerText = null;

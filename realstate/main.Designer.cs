@@ -35,11 +35,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
-            this.inbox = new System.Windows.Forms.Button();
             this.THolderofTopBottonMenu = new System.Windows.Forms.TableLayoutPanel();
             this.dataLable = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.getDateForm = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.newMessage = new System.Windows.Forms.Label();
+            this.inbox = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.TholderOfImageAndTopBottonMenu = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.THolderOfMainTables = new System.Windows.Forms.TableLayoutPanel();
@@ -47,51 +50,34 @@
             this.addfileBotton = new System.Windows.Forms.Button();
             this.searchFiltButt = new System.Windows.Forms.Button();
             this.archive = new System.Windows.Forms.Button();
-            this.راهنماToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.پرداختصورتحسابآنلاینToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button2 = new System.Windows.Forms.Button();
             this.رجیسترنرمافزارToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.مدیریتسیستمToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.اطلاعاتشخصیToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ابزارهاToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.عملیاتToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.newMessage = new System.Windows.Forms.Label();
             this.THolderofTopBottonMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.TholderOfImageAndTopBottonMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.THolderOfMainTables.SuspendLayout();
             this.THolderOFLeftButtons.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // inbox
-            // 
-            this.inbox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inbox.BackgroundImage")));
-            this.inbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.inbox.Location = new System.Drawing.Point(0, 0);
-            this.inbox.Name = "inbox";
-            this.inbox.Size = new System.Drawing.Size(80, 67);
-            this.inbox.TabIndex = 3;
-            this.inbox.UseVisualStyleBackColor = true;
-            this.inbox.Click += new System.EventHandler(this.inbox_Click);
             // 
             // THolderofTopBottonMenu
             // 
-            this.THolderofTopBottonMenu.ColumnCount = 7;
+            this.THolderofTopBottonMenu.ColumnCount = 6;
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.21127F));
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.68075F));
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.32864F));
-            this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.21127F));
-            this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.15024F));
-            this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.55869F));
+            this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.7277F));
+            this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.01878F));
             this.THolderofTopBottonMenu.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.44601F));
-            this.THolderofTopBottonMenu.Controls.Add(this.dataLable, 5, 0);
-            this.THolderofTopBottonMenu.Controls.Add(this.pictureBox1, 6, 0);
+            this.THolderofTopBottonMenu.Controls.Add(this.pictureBox1, 5, 0);
             this.THolderofTopBottonMenu.Controls.Add(this.getDateForm, 1, 0);
             this.THolderofTopBottonMenu.Controls.Add(this.panel1, 0, 0);
+            this.THolderofTopBottonMenu.Controls.Add(this.button1, 2, 0);
+            this.THolderofTopBottonMenu.Controls.Add(this.dataLable, 3, 0);
             this.THolderofTopBottonMenu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.THolderofTopBottonMenu.Location = new System.Drawing.Point(3, 3);
             this.THolderofTopBottonMenu.Name = "THolderofTopBottonMenu";
@@ -104,10 +90,11 @@
             // 
             this.dataLable.AutoSize = true;
             this.dataLable.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataLable.Location = new System.Drawing.Point(306, 0);
+            this.dataLable.Location = new System.Drawing.Point(455, 0);
             this.dataLable.Name = "dataLable";
-            this.dataLable.Size = new System.Drawing.Size(100, 84);
+            this.dataLable.Size = new System.Drawing.Size(128, 84);
             this.dataLable.TabIndex = 5;
+            this.dataLable.Text = "ddd";
             this.dataLable.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -125,12 +112,53 @@
             // 
             this.getDateForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("getDateForm.BackgroundImage")));
             this.getDateForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.getDateForm.Location = new System.Drawing.Point(679, 3);
+            this.getDateForm.Location = new System.Drawing.Point(678, 3);
             this.getDateForm.Name = "getDateForm";
             this.getDateForm.Size = new System.Drawing.Size(84, 67);
             this.getDateForm.TabIndex = 4;
             this.getDateForm.UseVisualStyleBackColor = true;
             this.getDateForm.Click += new System.EventHandler(this.getDateForm_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.newMessage);
+            this.panel1.Controls.Add(this.inbox);
+            this.panel1.Location = new System.Drawing.Point(769, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(80, 78);
+            this.panel1.TabIndex = 7;
+            // 
+            // newMessage
+            // 
+            this.newMessage.AutoSize = true;
+            this.newMessage.BackColor = System.Drawing.Color.White;
+            this.newMessage.ForeColor = System.Drawing.Color.Red;
+            this.newMessage.Location = new System.Drawing.Point(3, 3);
+            this.newMessage.Name = "newMessage";
+            this.newMessage.Size = new System.Drawing.Size(0, 13);
+            this.newMessage.TabIndex = 0;
+            // 
+            // inbox
+            // 
+            this.inbox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("inbox.BackgroundImage")));
+            this.inbox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.inbox.Location = new System.Drawing.Point(0, 0);
+            this.inbox.Name = "inbox";
+            this.inbox.Size = new System.Drawing.Size(80, 67);
+            this.inbox.TabIndex = 3;
+            this.inbox.UseVisualStyleBackColor = true;
+            this.inbox.Click += new System.EventHandler(this.inbox_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(590, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 67);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // TholderOfImageAndTopBottonMenu
             // 
@@ -181,6 +209,7 @@
             this.THolderOFLeftButtons.Controls.Add(this.addfileBotton, 0, 0);
             this.THolderOFLeftButtons.Controls.Add(this.searchFiltButt, 0, 1);
             this.THolderOFLeftButtons.Controls.Add(this.archive, 0, 2);
+            this.THolderOFLeftButtons.Controls.Add(this.button2, 0, 3);
             this.THolderOFLeftButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.THolderOFLeftButtons.Location = new System.Drawing.Point(867, 3);
             this.THolderOFLeftButtons.Name = "THolderOFLeftButtons";
@@ -230,22 +259,22 @@
             this.archive.UseVisualStyleBackColor = true;
             this.archive.Click += new System.EventHandler(this.archive_Click);
             // 
-            // راهنماToolStripMenuItem
+            // button2
             // 
-            this.راهنماToolStripMenuItem.Name = "راهنماToolStripMenuItem";
-            this.راهنماToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.راهنماToolStripMenuItem.Text = "راهنما";
-            // 
-            // پرداختصورتحسابآنلاینToolStripMenuItem
-            // 
-            this.پرداختصورتحسابآنلاینToolStripMenuItem.Name = "پرداختصورتحسابآنلاینToolStripMenuItem";
-            this.پرداختصورتحسابآنلاینToolStripMenuItem.Size = new System.Drawing.Size(143, 20);
-            this.پرداختصورتحسابآنلاینToolStripMenuItem.Text = "پرداخت صورت حساب آنلاین";
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Location = new System.Drawing.Point(3, 333);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 104);
+            this.button2.TabIndex = 9;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // رجیسترنرمافزارToolStripMenuItem
             // 
             this.رجیسترنرمافزارToolStripMenuItem.Name = "رجیسترنرمافزارToolStripMenuItem";
-            this.رجیسترنرمافزارToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.رجیسترنرمافزارToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.رجیسترنرمافزارToolStripMenuItem.Text = "رجیستر نرم افزار";
             this.رجیسترنرمافزارToolStripMenuItem.Click += new System.EventHandler(this.register_Click);
             // 
@@ -257,58 +286,15 @@
             this.مدیریتسیستمToolStripMenuItem.Size = new System.Drawing.Size(88, 20);
             this.مدیریتسیستمToolStripMenuItem.Text = "مدیریت سیستم ";
             // 
-            // اطلاعاتشخصیToolStripMenuItem
-            // 
-            this.اطلاعاتشخصیToolStripMenuItem.Name = "اطلاعاتشخصیToolStripMenuItem";
-            this.اطلاعاتشخصیToolStripMenuItem.Size = new System.Drawing.Size(94, 20);
-            this.اطلاعاتشخصیToolStripMenuItem.Text = "اطلاعات شخصی";
-            // 
-            // ابزارهاToolStripMenuItem
-            // 
-            this.ابزارهاToolStripMenuItem.Name = "ابزارهاToolStripMenuItem";
-            this.ابزارهاToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
-            this.ابزارهاToolStripMenuItem.Text = "ابزارها";
-            // 
-            // عملیاتToolStripMenuItem
-            // 
-            this.عملیاتToolStripMenuItem.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.عملیاتToolStripMenuItem.Name = "عملیاتToolStripMenuItem";
-            this.عملیاتToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.عملیاتToolStripMenuItem.Text = "عملیات";
-            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.عملیاتToolStripMenuItem,
-            this.ابزارهاToolStripMenuItem,
-            this.اطلاعاتشخصیToolStripMenuItem,
-            this.مدیریتسیستمToolStripMenuItem,
-            this.پرداختصورتحسابآنلاینToolStripMenuItem,
-            this.راهنماToolStripMenuItem});
+            this.مدیریتسیستمToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(984, 24);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.newMessage);
-            this.panel1.Controls.Add(this.inbox);
-            this.panel1.Location = new System.Drawing.Point(769, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(80, 78);
-            this.panel1.TabIndex = 7;
-            // 
-            // newMessage
-            // 
-            this.newMessage.AutoSize = true;
-            this.newMessage.BackColor = System.Drawing.Color.White;
-            this.newMessage.ForeColor = System.Drawing.Color.Red;
-            this.newMessage.Location = new System.Drawing.Point(3, 3);
-            this.newMessage.Name = "newMessage";
-            this.newMessage.Size = new System.Drawing.Size(0, 13);
-            this.newMessage.TabIndex = 0;
             // 
             // main
             // 
@@ -325,14 +311,14 @@
             this.THolderofTopBottonMenu.ResumeLayout(false);
             this.THolderofTopBottonMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.TholderOfImageAndTopBottonMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.THolderOfMainTables.ResumeLayout(false);
             this.THolderOFLeftButtons.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -351,17 +337,14 @@
         private System.Windows.Forms.Button addfileBotton;
         private System.Windows.Forms.Button searchFiltButt;
         private System.Windows.Forms.Button archive;
-        private System.Windows.Forms.ToolStripMenuItem راهنماToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem پرداختصورتحسابآنلاینToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem رجیسترنرمافزارToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem مدیریتسیستمToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem اطلاعاتشخصیToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ابزارهاToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem عملیاتToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label newMessage;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

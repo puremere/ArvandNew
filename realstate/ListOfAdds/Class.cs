@@ -354,6 +354,7 @@ namespace realstate.ListOfAdds
         public string phones { get; set; }
         public string codegrid { get; set; }
         public string dategrid { get; set; }
+      
         public string ownergrid { get; set; }
         public string typegrid { get; set; }
         public string floorgrid { get; set; }
@@ -362,12 +363,13 @@ namespace realstate.ListOfAdds
         public double ejare_metri { get; set; }
         public string bed { get; set; }
         public string zirbana { get; set; }
-        public string mantagheName { get; set; }
         public string Senn { get; set; }
         public string Address { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }
+        public DateTime datetime { get; set; }
+        public string mantagheName { get; set; }
     }
 
 

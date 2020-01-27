@@ -19,9 +19,17 @@ namespace realstate
 
         public static string lastSearchModel { get; set; }
         public static List<string> RowIDList = new List<string>();
+        public static List<string> RowIDListForArchive = new List<string>();
+        public static Font HlistFONT { get; set; }
         public static Font headerlistFONT { get; set; }
         public static Font headerlistFONTBold { get; set; }
         public static Font headerlistFONTsmall { get; set; }
+        public static Font shoonzdah { get; set; }
+
+        public static string role = "user";
+
+
+        public static string serrialNumber { get; set; }
         public static string newCatsAndAreas { get; set; }
         public static string searchTabghe { get; set; }
         public static string result { get; set; }

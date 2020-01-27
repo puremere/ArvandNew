@@ -38,12 +38,12 @@ namespace realstate {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ServerIP {
+        public string SerialNumber {
             get {
-                return ((string)(this["ServerIP"]));
+                return ((string)(this["SerialNumber"]));
             }
             set {
-                this["ServerIP"] = value;
+                this["SerialNumber"] = value;
             }
         }
         
@@ -109,12 +109,12 @@ namespace realstate {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string ip {
+        public string date {
             get {
-                return ((string)(this["ip"]));
+                return ((string)(this["date"]));
             }
             set {
-                this["ip"] = value;
+                this["date"] = value;
             }
         }
         
@@ -173,6 +173,18 @@ namespace realstate {
             }
             set {
                 this["address"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string role {
+            get {
+                return ((string)(this["role"]));
+            }
+            set {
+                this["role"] = value;
             }
         }
     }

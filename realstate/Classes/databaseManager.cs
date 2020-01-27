@@ -144,6 +144,51 @@ namespace realstate
             context.Inboxes.Add(model);
             context.SaveChanges();
         }
+        public int addToHamshahri(string title, string content)
+        {
+            try
+            {
+                context.Hames.Add(new Ham()
+                {
+                    content = content,
+                    title = title
+
+                });
+                context.SaveChanges();
+                return 200;
+                
+            }
+             
+            catch 
+            {
+
+                return 500;
+            }
+            
+        }
+        public List<Ham> getHamshahri()
+        {
+            return context.Hames.ToList();
+        }
+        public int deleHamshari(string ID)
+        {
+            try
+            {
+                Guid SID = Guid.Parse(ID);
+                Ham model = context.Hames.Where(x => x.ID == SID).SingleOrDefault();
+
+                context.Hames.Remove(model);
+                context.SaveChanges();
+                return 200;
+            }
+            catch (Exception error)
+            {
+
+                return 500;
+            }
+         
+        }
+
         public void delinbox()
         {
             context.Inboxes.RemoveRange(context.Inboxes);
@@ -188,18 +233,32 @@ namespace realstate
             }
             return srt;
         }
-        public List<item> getArchive(string name)
+        public List<archive> getArchive( string name)
         {
-            List<item> list = new List<item>();
+            List<archive> list = new List<archive>();
             try
             {
-                list = context.items.Where(x => x.userName == name).ToList();
+                list = context.Archives.Where(x => x.userName == name).ToList();
             }
+         
             catch (Exception)
             {
 
             }
             return list;
+        }
+        public void deleteArchive (long number,string name)
+        {
+            try
+            {
+                context.Archives.Remove(context.Archives.Where(x => x.number == number && x.userName == name).SingleOrDefault());
+                context.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+            }
+           
         }
         public void additem(item item)
         {
@@ -222,7 +281,7 @@ namespace realstate
 
         }
         List<item> list = new List<item>();
-        public List<item> getList(string query, string sortname)
+        public List<item> getList(string query)
         {
             queryModel log = JsonConvert.DeserializeObject<queryModel>(query);
             List<item> lsT = context.items.ToList();
@@ -659,14 +718,22 @@ namespace realstate
 
             if (log.address1 != "")
             {
-                List<string> add1List = log.address1.Split('-').ToList();
-                add1List.RemoveAt(add1List.Count - 1);
+                final = q;
+                List<string> add1List = null;
+                add1List = log.address1.Split('-').ToList();
+                if (log.address1.Contains("-"))
+                {
+                   
+                    add1List.RemoveAt(add1List.Count - 1);
+
+                }
                 foreach (var add1 in add1List)
                 {
                     if (add1List.IndexOf(add1) == 0)
                     {
-                        var first = q.Where(x => x.address1 == add1);
+                        var first = final.Where(x => x.address1 == add1);
                         final = first;
+                        List<item> LIST = first.ToList();
                     }
                     else
                     {
@@ -676,29 +743,28 @@ namespace realstate
 
                 }
             }
-            if (log.address2 != "")
-            {
-                List<string> add2List = log.address2.Split('-').ToList();
-                add2List.RemoveAt(add2List.Count - 1);
-                foreach (var add2 in add2List)
-                {
-                    if (add2List.IndexOf(add2) == 0)
-                    {
-                        var first = q.Where(x => x.address2 == add2);
-                        final = first;
-                    }
-                    else
-                    {
-                        var seconde = q.Where(x => x.address2 == add2);
-                        final = final.Union(seconde);
-                    }
-
-                }
-            }
             else
             {
                 final = q;
             }
+            if (log.address2.Replace("-","") != "")
+            {
+                List<string> add2List = null;
+                add2List = log.address2.Split('-').ToList();
+                if (log.address2.Contains("-"))
+                {
+
+                    add2List.RemoveAt(add2List.Count - 1);
+
+                }
+                foreach (var add2 in add2List)
+                {
+                    var seconde = q.Where(x => x.address2 == add2);
+                    final = final.Union(seconde);
+
+                }
+            }
+
             //if (log.address2 != "")
             //{
             //    List<string> add2List = log.address2.Split('-').ToList();

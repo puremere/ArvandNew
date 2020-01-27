@@ -344,7 +344,7 @@ namespace realstate
                 CATS = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
 
                 List<gridVM> list = new List<gridVM>();
-                List<item> Listitem = manager.getList(query, S);
+                List<item> Listitem = manager.getList(query);
                 foreach (var item in Listitem)
                 {
                     if (GlobalVariable.searchTabghe == "")
@@ -465,7 +465,7 @@ namespace realstate
 
                     bool mycheckbox = false;
                     totalrahn = totalrahn.Replace(".", "");
-                   
+
                     //// جهت بازیابی آیتم های تیک خورده استفاده می شود
                     //if (.Contains(serverid + ","))
                     //{
@@ -474,13 +474,14 @@ namespace realstate
                     gridVM newitem = new gridVM()
                     {
                         phones = item.phones,
-                         Address = item.address1 + item.address2 + item.address3,
-                         Address1 = item.address1,
-                         Address2 = item.address2,
-                         Address3 = item.address3,
+                        Address = item.address1 + item.address2 + item.address3,
+                        Address1 = item.address1,
+                        Address2 = item.address2,
+                        Address3 = item.address3,
                         bed = kha,
                         codegrid = item.number.ToString(),
                         dategrid = dateTimeConvert.ToPersianDateString(item.date_updated),
+                        datetime = item.date_updated,
                         ejare_metri = Convert.ToInt64(metriejare),
                         floorgrid = tabagh,
                         kindgrid = Dealkind,
@@ -1012,6 +1013,11 @@ namespace realstate
                 mantaghe_name.DataSource = new BindingSource(list, null);
             }
             
+        }
+
+        private void label55_Click(object sender, EventArgs e)
+        {
+
         }
 
 

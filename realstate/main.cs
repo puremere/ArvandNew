@@ -104,6 +104,7 @@ namespace realstate
 
         private void archive_Click(object sender, EventArgs e)
         {
+            
             BackgroundWorker getDataBackGroundWorker = new BackgroundWorker();
             getDataBackGroundWorker.WorkerSupportsCancellation = true;
             getDataBackGroundWorker.DoWork += new DoWorkEventHandler(getDataBackGroundWorker_do);
@@ -115,16 +116,13 @@ namespace realstate
 
 
             string NAME = (string)e.Argument;
-            string S = "";
-
-
             try
             {
                 CatsAndAreasObject CATS = new CatsAndAreasObject();
                 CATS = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
 
                 List<gridVM> list = new List<gridVM>();
-                List<item> Listitem = manager.getArchive(NAME);
+                List<archive> Listitem = manager.getArchive(NAME);
                 foreach (var item in Listitem)
                 {
                     if (GlobalVariable.searchTabghe == "")
@@ -261,6 +259,7 @@ namespace realstate
                         bed = kha,
                         codegrid = item.number.ToString(),
                         dategrid = dateTimeConvert.ToPersianDateString(item.date_updated),
+                        datetime = item.date_updated,
                         ejare_metri = Convert.ToInt64(metriejare),
                         floorgrid = tabagh,
                         kindgrid = Dealkind,
@@ -297,8 +296,8 @@ namespace realstate
             else
             {
 
-                fileList filelist = new fileList(e.Result.ToString());
-                filelist.Show();
+                ArchiveList archiveList = new ArchiveList(e.Result.ToString());
+                archiveList.Show();
                // refresh.Visible = false;
 
             }
@@ -309,6 +308,10 @@ namespace realstate
             
             Message message = new Message();
             message.Show();
+            GlobalVariable.notSeenInbox = "";
+            newMessage.Text = "";
+
+
 
         }
         
@@ -338,6 +341,18 @@ namespace realstate
 
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HamshahriAdd ham = new HamshahriAdd();
+            ham.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            HamshahriList list = new HamshahriList();
+            list.Show();
         }
     }
 }

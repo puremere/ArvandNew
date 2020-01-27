@@ -43,6 +43,7 @@
             this.sameaddress = new System.Windows.Forms.Button();
             this.detail = new System.Windows.Forms.Button();
             this.archive = new System.Windows.Forms.Button();
+            this.deleteItem = new System.Windows.Forms.DataGridViewButtonColumn();
             this.checkbox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.phones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mantagheName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,7 @@
             this.listGrid.AllowUserToDeleteRows = false;
             this.listGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.listGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.deleteItem,
             this.checkbox,
             this.phones,
             this.mantagheName,
@@ -307,6 +309,14 @@
             this.archive.MouseLeave += new System.EventHandler(this.sameaddress_MouseLeave);
             this.archive.MouseHover += new System.EventHandler(this.sameaddress_MouseHover);
             // 
+            // deleteItem
+            // 
+            this.deleteItem.DataPropertyName = "deleteItem";
+            this.deleteItem.HeaderText = "حذف";
+            this.deleteItem.Name = "deleteItem";
+            this.deleteItem.ReadOnly = true;
+            this.deleteItem.Width = 50;
+            // 
             // checkbox
             // 
             this.checkbox.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
@@ -505,6 +515,7 @@
         private System.Windows.Forms.Button detail;
         private System.Windows.Forms.Button sameaddress;
         private System.Windows.Forms.Button print;
+        private System.Windows.Forms.DataGridViewButtonColumn deleteItem;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkbox;
         private System.Windows.Forms.DataGridViewTextBoxColumn phones;
         private System.Windows.Forms.DataGridViewTextBoxColumn mantagheName;

@@ -5,7 +5,7 @@
     <Setting Name="ides" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ServerIP" Type="System.String" Scope="User">
+    <Setting Name="SerialNumber" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="IsLogedIn" Type="System.String" Scope="User">
@@ -23,7 +23,7 @@
     <Setting Name="password" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ip" Type="System.String" Scope="User">
+    <Setting Name="date" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="DownloadDateFrom" Type="System.DateTime" Scope="User">
@@ -39,6 +39,9 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="address" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="role" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

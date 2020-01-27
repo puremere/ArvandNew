@@ -31,13 +31,25 @@ namespace realstate
         item  obj = new item();
         CatsAndAreasObject CATS = null;
         databaseManager manager = new databaseManager();
-        public ItemDetail(string newItem)
+        public ItemDetail(string newItem, string fromwhere)
         {
             obj = JsonConvert.DeserializeObject<item>(newItem);
             CATS = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
 
             InitializeComponent();
             InitControl();
+            if (fromwhere == "archive"  )
+            {
+                button1.Visible = false;
+            }
+            else
+            {
+                if (GlobalVariable.role != "admin")
+                {
+                    button1.Visible = false;
+                }
+            }
+            
         }
         public ItemDetail()
         {
@@ -493,36 +505,22 @@ namespace realstate
                 wishoff.Visible = true;
 
             }
+          
+           
         }
 
 
 
-        //protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        //{
-           
-        //    //capture left arrow key
-        //    if (keyData == Keys.Left)
-        //    {
-        //        bringPreData();
-        //        return true;
-        //    }
-        //    //capture right arrow key
-        //    if (keyData == Keys.Right)
-        //    {
-        //        bringNextData();
-        //        return true;
-        //    }
-        //    return base.ProcessCmdKey(ref msg, keyData);
-        //}
-       
-
-       
-
-       
         
 
-       
-        
+
+
+
+
+
+
+
+
         private void wishoff_Click(object sender, EventArgs e)
         {
           
@@ -732,26 +730,7 @@ namespace realstate
                 string result = "";
                 if (controlVal == "True")
                 {
-                    using (WebClient client = new WebClient())
-                    {
-                        var collection = new System.Collections.Specialized.NameValueCollection();
-                        collection.Add("serial-number", "1111-1111-1111-1111");
-                        collection.Add("fileID", ID.Text);
-
-
-
-                        //  string json = JsonConvert.SerializeObject(collection, Formatting.Indented);
-                        byte[] response =
-                        client.UploadValues("http://Arvandfile.com/api/v2/mark_as_expired", collection);
-                        result = System.Text.Encoding.UTF8.GetString(response);
-
-                        ExpireVM model = JsonConvert.DeserializeObject<ExpireVM>(result);
-                        if(model.status == 200)
-                        {
-                            MessageBox.Show("فایل مورد نظر  منقضی شد");
-                        }
-
-                    }
+                    
                 }
                 else
                 {
@@ -760,6 +739,30 @@ namespace realstate
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            deleteVrification del = new deleteVrification(ID.Text, "1","");
+            del.Show();
+          
+        }
+
+        private void ItemDetail_KeyDown(object sender, KeyEventArgs e)
+        {
+            //capture left arrow key
+            if (e.KeyData == Keys.Left)
+            {
+                bringPreData();
+              
+            }
+            //capture right arrow key
+            if (e.KeyData == Keys.Right)
+            {
+                bringNextData();
+               
+            }
+        }
+       
     }
 }
 

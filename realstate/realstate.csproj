@@ -153,12 +153,24 @@
     <Reference Include="TelerikCommon, Version=2018.3.1016.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchiveList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArchiveList.Designer.cs">
+      <DependentUpon>ArchiveList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Class.cs" />
     <Compile Include="Classes\databaseManager.cs" />
     <Compile Include="Classes\dateTimeConvert.cs" />
     <Compile Include="Classes\FontClass.cs" />
     <Compile Include="Classes\functions.cs" />
     <Compile Include="Classes\RegisterResponse.cs" />
+    <Compile Include="deleteVrification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="deleteVrification.Designer.cs">
+      <DependentUpon>deleteVrification.cs</DependentUpon>
+    </Compile>
     <Compile Include="fileList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +184,18 @@
       <DependentUpon>getData.cs</DependentUpon>
     </Compile>
     <Compile Include="GridViewRow.cs" />
+    <Compile Include="HamshahriAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HamshahriAdd.Designer.cs">
+      <DependentUpon>HamshahriAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HamshahriList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HamshahriList.Designer.cs">
+      <DependentUpon>HamshahriList.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListOfAdds\Inbox\InboxVM.cs" />
     <Compile Include="ListOfAdds\lisener.cs" />
     <Compile Include="ListOfAdds\Context.cs" />
@@ -233,11 +257,23 @@
       <DependentUpon>Settings1.settings</DependentUpon>
     </Compile>
     <Compile Include="ListOfAdds\VM\ExpireVM.cs" />
+    <EmbeddedResource Include="ArchiveList.resx">
+      <DependentUpon>ArchiveList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="deleteVrification.resx">
+      <DependentUpon>deleteVrification.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fileList.resx">
       <DependentUpon>fileList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="getData.resx">
       <DependentUpon>getData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HamshahriAdd.resx">
+      <DependentUpon>HamshahriAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HamshahriList.resx">
+      <DependentUpon>HamshahriList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.cs</DependentUpon>

@@ -44,7 +44,6 @@
             this.tabaghe1 = new System.Windows.Forms.TextBox();
             this.tabaghe_1_metri = new System.Windows.Forms.TextBox();
             this.tabaghe_1_total_price = new System.Windows.Forms.TextBox();
-            this.wishoff = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel24 = new System.Windows.Forms.TableLayoutPanel();
             this.radPanel52 = new Telerik.WinControls.UI.RadPanel();
             this.title = new System.Windows.Forms.TextBox();
@@ -254,15 +253,15 @@
             this.villa = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.radPanel34 = new Telerik.WinControls.UI.RadPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.radPanel35 = new Telerik.WinControls.UI.RadPanel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.PictureBox();
+            this.wishoff = new System.Windows.Forms.PictureBox();
             this.saveToPrivate = new System.Windows.Forms.PictureBox();
             this.next = new System.Windows.Forms.PictureBox();
             this.back = new System.Windows.Forms.PictureBox();
             this.whishon = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.radPanel35 = new Telerik.WinControls.UI.RadPanel();
-            this.refresh = new System.Windows.Forms.PictureBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            ((System.ComponentModel.ISupportInitialize)(this.wishoff)).BeginInit();
             this.tableLayoutPanel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel52)).BeginInit();
             this.radPanel52.SuspendLayout();
@@ -387,14 +386,15 @@
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel34)).BeginInit();
             this.radPanel34.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.saveToPrivate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.whishon)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).BeginInit();
             this.radPanel35.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refresh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishoff)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveToPrivate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whishon)).BeginInit();
             this.SuspendLayout();
             // 
             // zirbana3
@@ -550,18 +550,6 @@
             this.tabaghe_1_total_price.Size = new System.Drawing.Size(96, 13);
             this.tabaghe_1_total_price.TabIndex = 48;
             this.tabaghe_1_total_price.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // wishoff
-            // 
-            this.wishoff.Image = global::realstate.Properties.Resources.down;
-            this.wishoff.Location = new System.Drawing.Point(383, 660);
-            this.wishoff.Name = "wishoff";
-            this.wishoff.Size = new System.Drawing.Size(30, 30);
-            this.wishoff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.wishoff.TabIndex = 249;
-            this.wishoff.TabStop = false;
-            this.wishoff.Visible = false;
-            this.wishoff.Click += new System.EventHandler(this.wishoff_Click);
             // 
             // tableLayoutPanel24
             // 
@@ -3320,52 +3308,6 @@
             this.radPanel34.TabIndex = 0;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel34.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             // 
-            // saveToPrivate
-            // 
-            this.saveToPrivate.Image = ((System.Drawing.Image)(resources.GetObject("saveToPrivate.Image")));
-            this.saveToPrivate.Location = new System.Drawing.Point(421, 659);
-            this.saveToPrivate.Name = "saveToPrivate";
-            this.saveToPrivate.Size = new System.Drawing.Size(30, 30);
-            this.saveToPrivate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.saveToPrivate.TabIndex = 252;
-            this.saveToPrivate.TabStop = false;
-            this.saveToPrivate.Visible = false;
-            this.saveToPrivate.Click += new System.EventHandler(this.saveToPrivate_Click);
-            // 
-            // next
-            // 
-            this.next.Image = ((System.Drawing.Image)(resources.GetObject("next.Image")));
-            this.next.Location = new System.Drawing.Point(48, 660);
-            this.next.Name = "next";
-            this.next.Size = new System.Drawing.Size(30, 30);
-            this.next.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.next.TabIndex = 251;
-            this.next.TabStop = false;
-            this.next.Click += new System.EventHandler(this.next_Click);
-            // 
-            // back
-            // 
-            this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
-            this.back.Location = new System.Drawing.Point(12, 659);
-            this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(30, 30);
-            this.back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.back.TabIndex = 250;
-            this.back.TabStop = false;
-            this.back.Click += new System.EventHandler(this.back_Click);
-            // 
-            // whishon
-            // 
-            this.whishon.Image = global::realstate.Properties.Resources.up;
-            this.whishon.Location = new System.Drawing.Point(342, 660);
-            this.whishon.Name = "whishon";
-            this.whishon.Size = new System.Drawing.Size(30, 30);
-            this.whishon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.whishon.TabIndex = 248;
-            this.whishon.TabStop = false;
-            this.whishon.Visible = false;
-            this.whishon.Click += new System.EventHandler(this.whishon_Click);
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -3414,12 +3356,22 @@
             this.radPanel35.TabIndex = 1;
             ((Telerik.WinControls.Primitives.BorderPrimitive)(this.radPanel35.GetChildAt(0).GetChildAt(1))).Visibility = Telerik.WinControls.ElementVisibility.Collapsed;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(90, 659);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 31);
+            this.button1.TabIndex = 264;
+            this.button1.Text = "منقضی شده";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // refresh
             // 
             this.refresh.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.refresh.Image = ((System.Drawing.Image)(resources.GetObject("refresh.Image")));
-            this.refresh.Location = new System.Drawing.Point(186, 660);
+            this.refresh.Location = new System.Drawing.Point(211, 659);
             this.refresh.Name = "refresh";
             this.refresh.Size = new System.Drawing.Size(43, 30);
             this.refresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -3427,17 +3379,63 @@
             this.refresh.TabStop = false;
             this.refresh.Visible = false;
             // 
-            // checkBox1
+            // wishoff
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(88, 668);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.checkBox1.Size = new System.Drawing.Size(82, 17);
-            this.checkBox1.TabIndex = 263;
-            this.checkBox1.Text = "منقضی شده";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.wishoff.Image = global::realstate.Properties.Resources.down;
+            this.wishoff.Location = new System.Drawing.Point(383, 660);
+            this.wishoff.Name = "wishoff";
+            this.wishoff.Size = new System.Drawing.Size(30, 30);
+            this.wishoff.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.wishoff.TabIndex = 249;
+            this.wishoff.TabStop = false;
+            this.wishoff.Visible = false;
+            this.wishoff.Click += new System.EventHandler(this.wishoff_Click);
+            // 
+            // saveToPrivate
+            // 
+            this.saveToPrivate.Image = ((System.Drawing.Image)(resources.GetObject("saveToPrivate.Image")));
+            this.saveToPrivate.Location = new System.Drawing.Point(421, 659);
+            this.saveToPrivate.Name = "saveToPrivate";
+            this.saveToPrivate.Size = new System.Drawing.Size(30, 30);
+            this.saveToPrivate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.saveToPrivate.TabIndex = 252;
+            this.saveToPrivate.TabStop = false;
+            this.saveToPrivate.Visible = false;
+            this.saveToPrivate.Click += new System.EventHandler(this.saveToPrivate_Click);
+            // 
+            // next
+            // 
+            this.next.Image = ((System.Drawing.Image)(resources.GetObject("next.Image")));
+            this.next.Location = new System.Drawing.Point(48, 660);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(30, 30);
+            this.next.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.next.TabIndex = 251;
+            this.next.TabStop = false;
+            this.next.Click += new System.EventHandler(this.next_Click);
+            // 
+            // back
+            // 
+            this.back.Image = ((System.Drawing.Image)(resources.GetObject("back.Image")));
+            this.back.Location = new System.Drawing.Point(12, 659);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(30, 30);
+            this.back.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.back.TabIndex = 250;
+            this.back.TabStop = false;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // whishon
+            // 
+            this.whishon.Image = global::realstate.Properties.Resources.up;
+            this.whishon.Location = new System.Drawing.Point(342, 660);
+            this.whishon.Name = "whishon";
+            this.whishon.Size = new System.Drawing.Size(30, 30);
+            this.whishon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.whishon.TabIndex = 248;
+            this.whishon.TabStop = false;
+            this.whishon.Visible = false;
+            this.whishon.Click += new System.EventHandler(this.whishon_Click);
             // 
             // ItemDetail
             // 
@@ -3445,7 +3443,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1142, 713);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.refresh);
             this.Controls.Add(this.wishoff);
             this.Controls.Add(this.tableLayoutPanel24);
@@ -3465,7 +3463,7 @@
             this.Name = "ItemDetail";
             this.Text = "جزئیات محصول";
             this.Load += new System.EventHandler(this.ItemDetail_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.wishoff)).EndInit();
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ItemDetail_KeyDown);
             this.tableLayoutPanel24.ResumeLayout(false);
             this.tableLayoutPanel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel52)).EndInit();
@@ -3648,14 +3646,15 @@
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel34)).EndInit();
             this.radPanel34.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.saveToPrivate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.back)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.whishon)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.radPanel35)).EndInit();
             this.radPanel35.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.refresh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wishoff)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.saveToPrivate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.next)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.back)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.whishon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3894,6 +3893,6 @@
         private System.Windows.Forms.Label label13;
         private Telerik.WinControls.UI.RadPanel radPanel1;
         private System.Windows.Forms.TextBox wc;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }

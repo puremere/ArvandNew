@@ -24,6 +24,7 @@ namespace realstate
         Classes.FontClass fontclass = new Classes.FontClass();
         ListOfAdds.File obj = new ListOfAdds.File();
         CatsAndAreasObject CATS = null;
+        CatsAndAreasObject log = null;
         public manageFile()
         {
             InitializeComponent();
@@ -242,11 +243,24 @@ namespace realstate
         }
         private void SetDelimiter(object sender, EventArgs e)
         {
-            TextBox textbox = sender as TextBox;
-            if (textbox.Text != "")
+            try
             {
-                textbox.Text = string.Format("{0:#,##0}", double.Parse(textbox.Text));
+                TextBox textbox = sender as TextBox;
+                if (textbox.Text != "")
+                {
+                    string srt = textbox.Text.Replace(",", "");
+                    textbox.Text = string.Format("{0:#,##0}", double.Parse(srt));
+                    textbox.SelectionStart = textbox.Text.Length;
+                    textbox.SelectionLength = 0;
+                }
+                //09125409343
+
             }
+            catch (Exception)
+            {
+                
+            }
+            
         }
         public string getChangedValue(string value)
         {
@@ -343,7 +357,9 @@ namespace realstate
 
 
             owner.Text = obj.malek;
-            address.Text = obj.address;
+            address1.Text = obj.address;
+            address2.Text = obj.address;
+            address3.Text = obj.address;
             date_updated.Text = obj.date_updated;
             ID.Text = obj.ID;
             total_vahed.Text = obj.total_vahed;
@@ -470,7 +486,7 @@ namespace realstate
                 }
 
                 //final = final.Remove(final.Length - 1, 1);
-                garmayesh_sarmayesh.Text = final;
+                SG.Text = final;
 
             }
             else if (obj.garmayesh_sarmayesh.Length == 1)
@@ -478,11 +494,11 @@ namespace realstate
 
                 if (obj.garmayesh_sarmayesh == "0")
                 {
-                    garmayesh_sarmayesh.Text = "-";
+                    SG.Text = "-";
                 }
                 else
                 {
-                    garmayesh_sarmayesh.Text = (from q in CATS.data.list.garmayesh_sarmayesh
+                    SG.Text = (from q in CATS.data.list.garmayesh_sarmayesh
                                                 where q.ID == obj.garmayesh_sarmayesh
                                                 select q.title).First();
                 }
@@ -490,7 +506,7 @@ namespace realstate
             }
             else
             {
-                garmayesh_sarmayesh.Text = "-";
+                SG.Text = "-";
             }
 
             if (obj.ashpazkhane1.Length > 1)
@@ -516,7 +532,7 @@ namespace realstate
                              select q.title).First();
                 }
                 // final = final.Remove(final.Length - 1, 1);
-                ashpazkhane1.Text = final;
+               as1.Text = final;
 
             }
             else if (obj.ashpazkhane1.Length == 1)
@@ -524,11 +540,11 @@ namespace realstate
 
                 if (obj.ashpazkhane1 == "0")
                 {
-                    ashpazkhane1.Text = "-";
+                   as1.Text = "-";
                 }
                 else
                 {
-                    ashpazkhane1.Text = (from q in CATS.data.list.ashpazkhane
+                   as1.Text = (from q in CATS.data.list.ashpazkhane
                                          where q.ID == obj.ashpazkhane1
                                          select q.title).First();
                 }
@@ -536,7 +552,7 @@ namespace realstate
             }
             else
             {
-                ashpazkhane1.Text = "-";
+               as1.Text = "-";
             }
 
             if (obj.ashpazkhane2.Length > 0)
@@ -562,7 +578,7 @@ namespace realstate
                              select q.title).First();
                 }
                 //final = final.Remove(final.Length - 1, 1);
-                ashpazkhane2.Text = final;
+               as2.Text = final;
 
             }
 
@@ -571,11 +587,11 @@ namespace realstate
 
                 if (obj.ashpazkhane2 == "0")
                 {
-                    ashpazkhane2.Text = "-";
+                   as2.Text = "-";
                 }
                 else
                 {
-                    ashpazkhane2.Text = (from q in CATS.data.list.ashpazkhane
+                   as2.Text = (from q in CATS.data.list.ashpazkhane
                                          where q.ID == obj.ashpazkhane2
                                          select q.title).First();
                 }
@@ -583,7 +599,7 @@ namespace realstate
             }
             else
             {
-                ashpazkhane2.Text = "-";
+               as2.Text = "-";
             }
             if (obj.ashpazkhane3.Length > 0)
             {
@@ -608,7 +624,7 @@ namespace realstate
                              select q.title).First();
                 }
                 //final = final.Remove(final.Length - 1, 1);
-                ashpazkhane3.Text = final;
+               as3.Text = final;
 
             }
             else if (obj.ashpazkhane3.Length == 1)
@@ -616,11 +632,11 @@ namespace realstate
 
                 if (obj.ashpazkhane3 == "0")
                 {
-                    ashpazkhane3.Text = "-";
+                   as3.Text = "-";
                 }
                 else
                 {
-                    ashpazkhane3.Text = (from q in CATS.data.list.ashpazkhane
+                   as3.Text = (from q in CATS.data.list.ashpazkhane
                                          where q.ID == obj.ashpazkhane3
                                          select q.title).First();
                 }
@@ -628,7 +644,7 @@ namespace realstate
             }
             else
             {
-                ashpazkhane3.Text = "-";
+               as3.Text = "-";
             }
             senn.Text = obj.senn == "0" ? "-" : (from q in CATS.data.list.senn
                                                  where q.ID == obj.senn
@@ -661,8 +677,8 @@ namespace realstate
                 
                 List<ListOfAdds.item> list = new List<ListOfAdds.item>();
                 long id = 0;
-                
-                id =Convert.ToInt64(ID.Text);
+
+                id = 0;//Convert.ToInt64(ID.Text);
                 ListOfAdds.item model = list.Where(x => x.number == id).FirstOrDefault();
                 if (model == null)
                 {
@@ -687,7 +703,9 @@ namespace realstate
                     PHNS = PHNS + phone4.Text + ",";
                 }
               
-                model.address = address.Text;
+                model.address1 = address1.Text;
+                model.address2 = address2.Text;
+                model.address3 = address3.Text;
 
                 model.anbari1 = anbari1.Checked ? "1" : "0";
                 model.anbari2 = anbari2.Checked ? "1" : "0";
@@ -713,6 +731,11 @@ namespace realstate
                 model.maghaze = maghaze.Checked ? "1" : "0";
                 model.malek = owner.Text;
 
+                model.wc = setIndexForwc();
+                model.garmayesh_sarmayesh = setIndexForsg();
+                model.ashpazkhane1 = setIndexForas1();
+                model.ashpazkhane2 = setIndexForas2();
+                model.ashpazkhane3 = setIndexForas3();
 
                 model.phones = PHNS;
 
@@ -822,7 +845,7 @@ namespace realstate
         {
 
 
-            CatsAndAreasObject log = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
+             log = JsonConvert.DeserializeObject<CatsAndAreasObject>(GlobalVariable.newCatsAndAreas);
             Settings1.Default.IsLogedIn = "1";
 
             apartment.DisplayMember = "title";
@@ -830,15 +853,15 @@ namespace realstate
             apartment.DataSource = new BindingSource(log.data.list.apartment, null);
 
 
-            ashpazkhane1.DisplayMember = "title";
-            ashpazkhane1.ValueMember = "ID";
-            ashpazkhane1.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
-            ashpazkhane2.DisplayMember = "title";
-            ashpazkhane2.ValueMember = "ID";
-            ashpazkhane2.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
-            ashpazkhane3.DisplayMember = "title";
-            ashpazkhane3.ValueMember = "ID";
-            ashpazkhane3.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
+           as1.DisplayMember = "title";
+           as1.ValueMember = "ID";
+           as1.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
+           as2.DisplayMember = "title";
+           as2.ValueMember = "ID";
+           as2.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
+           as3.DisplayMember = "title";
+           as3.ValueMember = "ID";
+           as3.DataSource = new BindingSource(log.data.list.ashpazkhane, null);
 
             office.DisplayMember = "title";
             office.ValueMember = "ID";
@@ -848,6 +871,9 @@ namespace realstate
             kolangi.ValueMember = "ID";
             kolangi.DataSource = new BindingSource(log.data.list.kolangi, null);
 
+            wc.DisplayMember = "title";
+            wc.ValueMember = "ID";
+            wc.DataSource = new BindingSource(log.data.list.behdashti, null);
 
             villa.DisplayMember = "title";
             villa.ValueMember = "ID";
@@ -884,12 +910,619 @@ namespace realstate
             kaf_type.DataSource = new BindingSource(log.data.list.kaf_type, null);
 
 
-            garmayesh_sarmayesh.DisplayMember = "title";
-            garmayesh_sarmayesh.ValueMember = "ID";
-            garmayesh_sarmayesh.DataSource = new BindingSource(log.data.list.garmayesh_sarmayesh, null);
+            SG.DisplayMember = "title";
+            SG.ValueMember = "ID";
+            SG.DataSource = new BindingSource(log.data.list.garmayesh_sarmayesh, null);
             
         }
-      
-        
+
+        private void removeWC_Click(object sender, EventArgs e)
+        {
+            wcText.Text = "";
+        }
+        private void wcText_Click(object sender, EventArgs e)
+        {
+            if (panelOfWC.Visible == false)
+            {
+                int x = panelOfWCText.Location.X;
+                int y = panelOfWCText.Location.Y;
+                panelOfWC.Location = new Point(x + 2, panelOfWC.Location.Y);
+                panelOfWC.Width = 250 ;
+                panelOfWC.Visible = true;
+            }
+            else
+            {
+                panelOfWC.Visible = false;
+            }
+            // wcText.Text = "";
+        }
+
+        private void wcText_TextChanged(object sender, EventArgs e)
+        {
+           // List<Mantaghe> finallist = new List<Mantaghe>();
+
+            if (wcText.Text.Length > 0)
+            {
+                removeWC.Visible = true;
+
+            }
+            else
+            {
+                removeWC.Visible = false;
+
+            }
+        }
+
+        private void wcText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                panelOfWC.Visible = true;
+                wc.Focus();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                panelOfWC.Visible = false;
+
+            }
+        }
+
+        private void wc_Leave(object sender, EventArgs e)
+        {
+            panelOfWC.Visible = false;
+        }
+
+        private void wc_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                wcItemClicked();
+            }
+        }
+
+        private void wc_DoubleClick(object sender, EventArgs e)
+        {
+            wcItemClicked();
+        }
+        private void wcItemClicked()
+        {
+            string selectedItem = wc.Text;
+            string NowValue = wcText.Text;
+            int index = wcText.Text.LastIndexOf(",");
+
+            if (index != -1)
+            {
+                if (!NowValue.Contains(selectedItem))
+                {
+                    wcText.Text = NowValue + selectedItem + ",";
+                }
+
+
+               // paneloflist.Visible = false;
+                // mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                this.Focus();
+            }
+
+            else
+            {
+                wcText.Text = selectedItem + ",";
+               // paneloflist.Visible = false;
+                //mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                wcText.Focus();
+            }
+        }
+
+        private void SG_Leave(object sender, EventArgs e)
+        {
+            panelOfSG.Visible = false;
+        }
+
+        private void SG_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                sgItemClicked();
+            }
+        }
+
+        private void SG_DoubleClick(object sender, EventArgs e)
+        {
+            sgItemClicked();
+        }
+
+        private void sgItemClicked()
+        {
+            string selectedItem = SG.Text;
+            string NowValue = sgText.Text;
+            int index = sgText.Text.LastIndexOf(",");
+
+            if (index != -1)
+            {
+                if (!NowValue.Contains(selectedItem))
+                {
+                    sgText.Text = NowValue + selectedItem + ",";
+                }
+
+
+                // paneloflist.Visible = false;
+                // mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                this.Focus();
+            }
+
+            else
+            {
+                sgText.Text = selectedItem + ",";
+                // paneloflist.Visible = false;
+                //mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                sgText.Focus();
+            }
+        }
+
+        private void sgText_Click(object sender, EventArgs e)
+        {
+            if (panelOfSG.Visible == false)
+            {
+                int x = panelOfWCText.Location.X;
+                int y = panelOfWCText.Location.Y;
+                panelOfSG.Location = new Point(x + 180, panelOfSG.Location.Y);
+                panelOfSG.Width = 250;
+                panelOfSG.Visible = true;
+            }
+            else
+            {
+                panelOfSG.Visible = false;
+            }
+        }
+
+        private void sgText_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                panelOfSG.Visible = true;
+                SG.Focus();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                panelOfSG.Visible = false;
+
+            }
+        }
+
+        private void sgText_TextChanged(object sender, EventArgs e)
+        {
+           // List<Mantaghe> finallist = new List<Mantaghe>();
+
+            if (sgText.Text.Length > 0)
+            {
+                removeSG.Visible = true;
+
+            }
+            else
+            {
+                removeSG.Visible = false;
+
+            }
+        }
+
+        private void removeSG_Click(object sender, EventArgs e)
+        {
+            sgText.Text = "";
+        }
+
+        private void as1Text_Click(object sender, EventArgs e)
+        {
+            if (panelOfAS1.Visible == false)
+            {
+                int x = panelOfAS1Text.Location.X;
+                int y = panelOfAS1Text.Location.Y;
+                panelOfAS1.Location = new Point(x +3, panelOfAS1.Location.Y);
+                panelOfAS1.Width = 250;
+                panelOfAS1.Visible = true;
+            }
+            else
+            {
+                panelOfAS1.Visible = false;
+            }
+        }
+
+        private void as2Text_Click(object sender, EventArgs e)
+        {
+            if (panelOfAS2.Visible == false)
+            {
+                int x = panelOfAS2Text.Location.X;
+                int y = panelOfAS2Text.Location.Y;
+                panelOfAS2.Location = new Point(x +3, panelOfAS2.Location.Y);
+                panelOfAS2.Width = 250;
+                panelOfAS2.Visible = true;
+            }
+            else
+            {
+                panelOfAS2.Visible = false;
+            }
+        }
+
+        private void as3Text_Click(object sender, EventArgs e)
+        {
+            if (panelOfAS3.Visible == false)
+            {
+                int x = panelOfAS3Text.Location.X;
+                int y = panelOfAS3Text.Location.Y;
+                panelOfAS3.Location = new Point(x + 3, panelOfAS3.Location.Y);
+                panelOfAS3.Width = 350;
+                panelOfAS3.Visible = true;
+            }
+            else
+            {
+                panelOfAS3.Visible = false;
+            }
+        }
+
+        private void as1Text_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                panelOfAS1.Visible = true;
+                as1.Focus();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                panelOfAS1.Visible = false;
+
+            }
+        }
+
+        private void as2Text_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                panelOfAS2.Visible = true;
+                as2.Focus();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                panelOfAS2.Visible = false;
+
+            }
+        }
+
+        private void as3Text_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Down)
+            {
+                panelOfAS3.Visible = true;
+                as3.Focus();
+            }
+            if (e.KeyCode == Keys.Up)
+            {
+                panelOfAS3.Visible = false;
+
+            }
+        }
+
+        private void as1Text_TextChanged(object sender, EventArgs e)
+        {
+            if (as1Text.Text.Length > 0)
+            {
+                removeAS1.Visible = true;
+
+            }
+            else
+            {
+                removeAS1.Visible = false;
+
+            }
+        }
+
+        private void as2Text_TextChanged(object sender, EventArgs e)
+        {
+            if (as2Text.Text.Length > 0)
+            {
+                removeAS2.Visible = true;
+
+            }
+            else
+            {
+                removeAS2.Visible = false;
+
+            }
+        }
+
+        private void as3Text_TextChanged(object sender, EventArgs e)
+        {
+            if (as3Text.Text.Length > 0)
+            {
+                removeAS3.Visible = true;
+
+            }
+            else
+            {
+                removeAS3.Visible = false;
+
+            }
+        }
+
+        private void as1_DoubleClick(object sender, EventArgs e)
+        {
+            as1ItemClicked();
+        }
+
+        private void as2_DoubleClick(object sender, EventArgs e)
+        {
+            as2ItemClicked();
+        }
+
+        private void as3_DoubleClick(object sender, EventArgs e)
+        {
+            as3ItemClicked();
+        }
+
+        private void as1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                as1ItemClicked();
+            }
+        }
+
+        private void as2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                as2ItemClicked();
+            }
+        }
+
+        private void as3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                as3ItemClicked();
+            }
+        }
+
+        private void as1_Leave(object sender, EventArgs e)
+        {
+            panelOfAS1.Visible = false;
+
+        }
+
+        private void as2_Leave(object sender, EventArgs e)
+        {
+            panelOfAS2.Visible = false;
+
+        }
+
+        private void as3_Leave(object sender, EventArgs e)
+        {
+            panelOfAS3.Visible = false;
+        }
+        private void as1ItemClicked()
+        {
+            string selectedItem = as1.Text;
+            string NowValue = as1Text.Text;
+            int index = as1Text.Text.LastIndexOf(",");
+
+            if (index != -1)
+            {
+                if (!NowValue.Contains(selectedItem))
+                {
+                    as1Text.Text = NowValue + selectedItem + ",";
+                }
+
+
+                // paneloflist.Visible = false;
+                // mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                this.Focus();
+            }
+
+            else
+            {
+                as1Text.Text = selectedItem + ",";
+                // paneloflist.Visible = false;
+                //mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                as1Text.Focus();
+            }
+        }
+        private void as2ItemClicked()
+        {
+            string selectedItem = as2.Text;
+            string NowValue = as2Text.Text;
+            int index = as2Text.Text.LastIndexOf(",");
+
+            if (index != -1)
+            {
+                if (!NowValue.Contains(selectedItem))
+                {
+                    as2Text.Text = NowValue + selectedItem + ",";
+                }
+
+
+                // paneloflist.Visible = false;
+                // mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                this.Focus();
+            }
+
+            else
+            {
+                as2Text.Text = selectedItem + ",";
+                // paneloflist.Visible = false;
+                //mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                as2Text.Focus();
+            }
+        }
+        private void as3ItemClicked()
+        {
+            string selectedItem = as3.Text;
+            string NowValue = as3Text.Text;
+            int index = as3Text.Text.LastIndexOf(",");
+
+            if (index != -1)
+            {
+                if (!NowValue.Contains(selectedItem))
+                {
+                    as3Text.Text = NowValue + selectedItem + ",";
+                }
+
+
+                // paneloflist.Visible = false;
+                // mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                this.Focus();
+            }
+
+            else
+            {
+                as3Text.Text = selectedItem + ",";
+                // paneloflist.Visible = false;
+                //mantagheNameText.Text = "";
+                //setIndexForMantaghe();
+                as3Text.Focus();
+            }
+        }
+
+        public string setIndexForwc()
+        {
+            string final = "";
+            if (wcText.Text != "")
+            {
+                string text = wcText.Text.Remove(wcText.Text.Length - 1);
+                List<string> list = text.Split(',').ToList();
+
+                foreach (var item in list)
+                {
+                    string value = (from p in log.data.list.behdashti
+                             where p.title == item
+                             select p.ID).First();
+
+                    final = final + value + ",";
+                }
+            }
+
+            if (final != "")
+            {
+                return "," + final;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string setIndexForsg()
+        {
+            string final = "";
+            if (sgText.Text != "")
+            {
+                string text = sgText.Text.Remove(sgText.Text.Length - 1);
+                List<string> list = text.Split(',').ToList();
+
+                foreach (var item in list)
+                {
+                    string value = (from p in log.data.list.garmayesh_sarmayesh
+                                    where p.title == item
+                                    select p.ID).First();
+
+                    final = final + value + ",";
+                }
+            }
+
+            if (final != "")
+            {
+                return "," + final;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string setIndexForas1()
+        {
+            string final = "";
+            if (as1Text.Text != "")
+            {
+                string text = as1Text.Text.Remove(as1Text.Text.Length - 1);
+                List<string> list = text.Split(',').ToList();
+
+                foreach (var item in list)
+                {
+                    string value = (from p in log.data.list.ashpazkhane
+                                    where p.title == item
+                                    select p.ID).First();
+
+                    final = final + value + ",";
+                }
+            }
+
+            if (final != "")
+            {
+                return "," + final;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string setIndexForas2()
+        {
+            string final = "";
+            if (as1Text.Text != "")
+            {
+                string text = as1Text.Text.Remove(as1Text.Text.Length - 1);
+                List<string> list = text.Split(',').ToList();
+
+                foreach (var item in list)
+                {
+                    string value = (from p in log.data.list.ashpazkhane
+                                    where p.title == item
+                                    select p.ID).First();
+
+                    final = final + value + ",";
+                }
+            }
+
+            if (final != "")
+            {
+                return "," + final;
+            }
+            else
+            {
+                return "";
+            }
+        }
+        public string setIndexForas3()
+        {
+            string final = "";
+            if (as1Text.Text != "")
+            {
+                string text = as1Text.Text.Remove(as1Text.Text.Length - 1);
+                List<string> list = text.Split(',').ToList();
+
+                foreach (var item in list)
+                {
+                    string value = (from p in log.data.list.ashpazkhane
+                                    where p.title == item
+                                    select p.ID).First();
+
+                    final = final + value + ",";
+                }
+            }
+
+            if (final != "")
+            {
+                return "," + final;
+            }
+            else
+            {
+                return "";
+            }
+        }
+
     }
 }
